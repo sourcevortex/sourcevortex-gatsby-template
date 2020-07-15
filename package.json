@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "name": "chsjr1996.page-src",
+  "private": false,
+  "description": "Carlos Henrique's blog and resume powered by Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Carlos H. <chsjr1996@gmail.com>",
   "dependencies": {
     "gatsby": "^2.23.12",
     "gatsby-image": "^2.4.9",
@@ -11,18 +11,25 @@
     "gatsby-plugin-offline": "^3.2.13",
     "gatsby-plugin-react-helmet": "^3.3.6",
     "gatsby-plugin-sharp": "^2.6.14",
-    "gatsby-source-filesystem": "^2.3.14",
+    "gatsby-source-filesystem": "^2.3.19",
+    "gatsby-transformer-remark": "^2.8.25",
     "gatsby-transformer-sharp": "^2.5.7",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
+    "@types/react-helmet": "^6.0.0",
+    "@types/styled-components": "^5.1.1",
     "prettier": "2.0.5"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "blog",
+    "markdown",
+    "react"
   ],
   "license": "0BSD",
   "scripts": {
@@ -36,9 +43,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/chsjr1996/chsjr1996.page-src"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/chsjr1996/chsjr1996.page-src/issues"
   }
 }
