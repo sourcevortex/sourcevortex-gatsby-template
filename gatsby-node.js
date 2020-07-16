@@ -4,6 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+const path = require('path')
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const blogPostTemplate = require.resolve(`./src/templates/blogTemplate.tsx`)
@@ -37,5 +39,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         slug: node.frontmatter.slug,
       },
     })
+  })
+}
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        '@Root': path.resolve(__dirname, 'src'),
+        '@Page': path.resolve(__dirname, 'src', 'pages'),
+        '@Component': path.resolve(__dirname, 'src', 'components'),
+      },
+    },
   })
 }

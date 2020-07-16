@@ -1,14 +1,26 @@
 import React from 'react'
 
-import { SidebarContainer, TmpLink } from './SidebarStyles'
+import {
+  StyledSidebarContainer,
+  StyledLink,
+  StyledHomeIcon,
+  StyledBookIcon,
+  StyledMenuBookIcon,
+} from './SidebarStyles'
 
 const Sidebar: React.FC = () => {
   return (
-    <SidebarContainer>
-      <TmpLink to="/">About</TmpLink>
-      <TmpLink to="/Blog">Blog</TmpLink>
-      <TmpLink to="/Docs">Docs</TmpLink>
-    </SidebarContainer>
+    <StyledSidebarContainer>
+      <StyledLink to="/">
+        <StyledHomeIcon />
+      </StyledLink>
+      <StyledLink to="/Blog">
+        <StyledBookIcon />
+      </StyledLink>
+      <StyledLink to="/Docs">
+        <StyledMenuBookIcon />
+      </StyledLink>
+    </StyledSidebarContainer>
   )
 }
 

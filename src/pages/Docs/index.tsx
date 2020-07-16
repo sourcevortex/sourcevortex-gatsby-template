@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { DefaultLayout } from '../../components/DefaultLayout'
-import { SEO } from '../../components/Seo'
+import { DefaultLayout } from '@Component/DefaultLayout'
+import { SEO } from '@Component/Seo'
 
 const Docs: React.FC = () => (
   <DefaultLayout>

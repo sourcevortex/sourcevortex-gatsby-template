@@ -1,8 +1,8 @@
 import React from 'react'
 import { PageProps, graphql } from 'gatsby'
 
-import { DefaultLayout } from '../components/DefaultLayout'
-import { SEO } from '../components/Seo'
+import { DefaultLayout } from '@Component/DefaultLayout'
+import { SEO } from '@Component/Seo'
 
 type DataProps = {
   site: {
@@ -12,7 +12,7 @@ type DataProps = {
 
 const UsingTypescript: React.FC<PageProps<DataProps>> = ({ data, path }) => (
   <DefaultLayout>
-    <SEO title="Using TypeScript" />
+    <SEO title="Home/About page" />
     <h1>About: Under development</h1>
   </DefaultLayout>
 )

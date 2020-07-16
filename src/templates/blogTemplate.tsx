@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { DefaultLayout } from '../components/DefaultLayout'
+
+import { DefaultLayout } from '@Component/DefaultLayout'
 
 export default function Template({ data }) {
   const { markdownRemark } = data
