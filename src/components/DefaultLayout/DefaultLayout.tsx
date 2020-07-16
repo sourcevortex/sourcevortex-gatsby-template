@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import './layout.css'
 
 import { Sidebar } from '@Component/Sidebar'
-import { StyledContainer } from './DefaultLayoutStyles'
+import { StyledContainer, StyledFooter } from './DefaultLayoutStyles'
 
 const DefaultLayout: React.FC = ({ children }) => {
   return (
@@ -11,11 +11,11 @@ const DefaultLayout: React.FC = ({ children }) => {
       <Sidebar />
       <StyledContainer>
         <main>{children}</main>
-        <footer>
+        <StyledFooter>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        </StyledFooter>
       </StyledContainer>
     </>
   )
