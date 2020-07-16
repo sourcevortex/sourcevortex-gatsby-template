@@ -17,6 +17,7 @@ export const StyledSidebarContainer = styled.div`
 export const StyledLink = styled(Link)`
   color: white;
   text-decoration: none;
+  margin: 10px 0;
 `
 
 export const StyledHomeIcon = styled(HomeIcon)``
