@@ -5,13 +5,15 @@ import Icon from '@material-ui/core/Icon'
 // Components
 import Tooltip from '@material-ui/core/Tooltip'
 
-import { DefaultLayout } from '@Component/DefaultLayout'
-import { SEO } from '@Component/Seo'
 import {
   StyledSocialContainer,
   StyledSocialIconBox,
   StyledParagraph,
-} from './IndexStyles'
+  StyledH3,
+} from '@Component/Home/IndexStyles'
+import { DefaultLayout } from '@Component/DefaultLayout'
+import { SEO } from '@Component/Seo'
+import { CustomTimeline } from '@Component/CustomTimeline'
 
 // Others
 import Profile from '@Root/config/profile'
@@ -39,6 +41,8 @@ const UsingTypescript: React.FC<PageProps<DataProps>> = ({ data, path }) => (
         </Tooltip>
       ))}
     </StyledSocialContainer>
+    <StyledH3>Experiência</StyledH3>
+    <CustomTimeline experiences={Profile.experience} />
   </DefaultLayout>
 )
 

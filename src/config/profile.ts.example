@@ -14,4 +14,15 @@ export default {
       icon: 'Use font awesome here!',
     },
   ],
+  experience: [
+    {
+      position: '',
+      company: '',
+      start: '',
+      end: '',
+      localization: '',
+      showDescription: true
+      description: ',
+    },
+  ],
 }

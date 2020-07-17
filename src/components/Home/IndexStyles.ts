@@ -3,7 +3,7 @@ import Typography from '@material-ui/core/Typography'
 
 export const StyledSocialContainer = styled.div`
   display: flex;
-  margin-top: 30px;
+  margin: 30px 0;
 `
 
 export const StyledSocialIconBox = styled.div`
@@ -28,3 +28,10 @@ export const StyledSocialIconBox = styled.div`
   }
 `
 export const StyledParagraph = styled(Typography)``
+
+export const StyledH3 = styled(Typography).attrs(() => ({
+  component: 'h3',
+}))`
+  font-size: 2rem !important;
+  font-weight: bold !important;
+`

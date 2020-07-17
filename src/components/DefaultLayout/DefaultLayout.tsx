@@ -11,11 +11,11 @@ const DefaultLayout: React.FC = ({ children }) => {
       <Sidebar />
       <StyledContainer>
         <main>{children}</main>
-        <StyledFooter>
+        {/* <StyledFooter>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </StyledFooter>
+        </StyledFooter> */}
       </StyledContainer>
     </>
   )
