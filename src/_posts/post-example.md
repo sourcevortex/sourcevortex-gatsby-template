@@ -6,10 +6,18 @@ title: 'Only a example'
 
 # Some example
 
-```js
-function() {
+```js:title=test/index.js
+async function test() {
+  return false
+}
 
+test()
+```
+
+```css:title=test/layout.css
+.class-selector {
+  background-color: black;
 }
 ```
 
-> Powerful markdown!
+- [ ] try display current language (plugin: show-language for prism.js)

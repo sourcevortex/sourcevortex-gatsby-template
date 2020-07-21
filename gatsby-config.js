@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Carlos Henrique | Blog & Resume`,
+    title: `Carlos Henrique | Resume, Blog & Docs `,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
@@ -20,7 +20,23 @@ module.exports = {
         path: `${__dirname}/src/_posts`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-code-titles',
+            options: {
+              className: 'md-code-title',
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {},
+          },
+        ],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -38,5 +54,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    `gatsby-plugin-styled-components`,
   ],
 }
