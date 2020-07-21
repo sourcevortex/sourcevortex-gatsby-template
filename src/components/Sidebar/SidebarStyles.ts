@@ -6,12 +6,21 @@ import MenuBookIcon from '@material-ui/icons/MenuBook'
 
 export const StyledSidebarContainer = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   position: fixed;
   width: 60px;
   height: 100vh;
+`
+
+export const StyledSidebarSubContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #111111;
+  border-radius: 0.3rem;
+  width: 40px;
+  height: 300px;
+  margin-left: 10px;
 `
 
 export const StyledLink = styled(Link)`
