@@ -4,7 +4,7 @@ import './layout.css'
 import './prism.css'
 
 import { Sidebar } from '@Component/Sidebar'
-import { StyledContainer, StyledFooter } from './DefaultLayoutStyles'
+import { StyledContainer } from './DefaultLayoutStyles'
 
 const DefaultLayout: React.FC = ({ children }) => {
   return (
