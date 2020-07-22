@@ -19,8 +19,10 @@
     "paths": {
       "@Root/*": ["*"],
       "@Page/*": ["pages/*"],
-      "@Component/*": ["components/*"]
+      "@Component/*": ["components/*"],
+      "@Util/*": ["utils/*"],
+      "@Duck/*": ["store/ducks/*"]
     }
   },
-  "include": ["src", "src/index.tsx"]
+  "include": ["src", "src/index.tsx", "wrap-with-provider.tsx"]
 }
