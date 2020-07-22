@@ -70,3 +70,4 @@ yarn-error.log
 
 # Personal data
 src/config/profile.ts
+src/config/pagesSummary.ts

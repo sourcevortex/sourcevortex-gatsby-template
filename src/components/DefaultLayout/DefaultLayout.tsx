@@ -1,12 +1,39 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useEffect } from 'react'
+import { useStore } from 'react-redux'
+
+// Main CSS
 import './layout.css'
 import './prism.css'
 
+// Components
 import { Sidebar } from '@Component/Sidebar'
 import { StyledContainer } from './DefaultLayoutStyles'
 
-const DefaultLayout: React.FC = ({ children }) => {
+// Configs
+import { PagesSummaryEnum } from '@Config/pagesSummary'
+
+// Utils & Others
+import saveCurrentPage from '@Util/saveCurrentPage'
+import { AppStore } from '@Root/store'
+
+interface DefaultLayoutProps {
+  children: React.ReactNode
+  page?: PagesSummaryEnum
+}
+
+const DefaultLayout: React.FC<DefaultLayoutProps> = (
+  props: DefaultLayoutProps
+) => {
+  const { children, page } = props
+
+  const store = useStore<AppStore>()
+
+  useEffect(() => {
+    if (page >= 0) {
+      saveCurrentPage(page, store)
+    }
+  }, [page])
+
   return (
     <>
       <Sidebar />
@@ -16,9 +43,4 @@ const DefaultLayout: React.FC = ({ children }) => {
     </>
   )
 }
-
-DefaultLayout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
 export default DefaultLayout

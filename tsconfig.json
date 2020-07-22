@@ -18,6 +18,7 @@
     "baseUrl": "./src/",
     "paths": {
       "@Root/*": ["*"],
+      "@Config/*": ["config/*"],
       "@Page/*": ["pages/*"],
       "@Component/*": ["components/*"],
       "@Util/*": ["utils/*"],
