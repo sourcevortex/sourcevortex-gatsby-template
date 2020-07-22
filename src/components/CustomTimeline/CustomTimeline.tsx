@@ -16,48 +16,39 @@ import {
   StyledBody1,
 } from './CustomTimelineStyles'
 
-interface Experience {
-  position: string
-  company: string
-  start: string
-  end: string
-  localization: string
-  showDescription: boolean
-  description: string
+export interface Content {
+  title: string
+  subtitle: string
+  subtitle2: string
+  subtitle3: string
+  showBody: boolean
+  body: string
 }
 
 interface CustomTimelineProps {
-  experiences: Experience[]
+  contents: Content[]
 }
 
-export default function CustomTimeline({ experiences }: CustomTimelineProps) {
-  const renderTimelineItem = (experience: Experience, index: number) => {
-    const lastItem = experiences.length === index + 1
-    const {
-      position,
-      company,
-      start,
-      end,
-      localization,
-      showDescription,
-      description,
-    } = experience
+export default function CustomTimeline({ contents }: CustomTimelineProps) {
+  const renderTimelineItem = (content: Content, index: number) => {
+    const lastItem = contents.length === index + 1
+    const { title, subtitle, subtitle2, subtitle3, showBody, body } = content
     return (
-      <TimelineItem key={`timeline-item-${position}`}>
+      <TimelineItem key={`timeline-item-${title}`}>
         <TimelineSeparator>
           <TimelineDot />
           {!lastItem && <TimelineConnector />}
         </TimelineSeparator>
         <TimelineContent>
           <StyledPaper>
-            <StyledH6>{position}</StyledH6>
-            <StyledSubtitle1>{company}</StyledSubtitle1>
-            <StyledSubtitle2>{`${start} - ${end}`}</StyledSubtitle2>
-            <StyledSubtitle2>{localization}</StyledSubtitle2>
-            {description && showDescription && (
+            <StyledH6>{title}</StyledH6>
+            <StyledSubtitle1>{subtitle}</StyledSubtitle1>
+            <StyledSubtitle2>{subtitle2}</StyledSubtitle2>
+            <StyledSubtitle2>{subtitle3}</StyledSubtitle2>
+            {body && showBody && (
               <>
                 <hr />
-                <StyledBody1>{description}</StyledBody1>
+                <StyledBody1>{body}</StyledBody1>
               </>
             )}
           </StyledPaper>
@@ -69,7 +60,7 @@ export default function CustomTimeline({ experiences }: CustomTimelineProps) {
   return (
     <StyledContainer>
       <Timeline align="left">
-        {experiences && experiences.map(renderTimelineItem)}
+        {contents && contents.map(renderTimelineItem)}
       </Timeline>
     </StyledContainer>
   )

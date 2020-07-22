@@ -12,7 +12,7 @@ import {
 } from '@Component/Home/IndexStyles'
 import { DefaultLayout } from '@Component/DefaultLayout'
 import { SEO } from '@Component/Seo'
-import { CustomTimeline } from '@Component/CustomTimeline'
+import { CustomTimeline, Content } from '@Component/CustomTimeline'
 
 // Others
 import Profile from '@Root/config/profile'
@@ -25,6 +25,19 @@ type DataProps = {
 }
 
 const HomePage: React.FC<PageProps<DataProps>> = ({ data, path }) => {
+  let timelineContents: Content[] = []
+
+  Profile.experience.map(exp => {
+    timelineContents.push({
+      title: exp.position,
+      subtitle: exp.company,
+      subtitle2: `${exp.start} - ${exp.end}`,
+      subtitle3: `${exp.localization}`,
+      body: exp.description,
+      showBody: exp.showDescription,
+    })
+  })
+
   return (
     <DefaultLayout page={Pg.HOME_PAGE}>
       <SEO title="Home/About page" />
@@ -43,7 +56,7 @@ const HomePage: React.FC<PageProps<DataProps>> = ({ data, path }) => {
         ))}
       </StyledSocialContainer>
       <StyledH3>Experiência</StyledH3>
-      <CustomTimeline experiences={Profile.experience} />
+      <CustomTimeline contents={timelineContents} />
     </DefaultLayout>
   )
 }
