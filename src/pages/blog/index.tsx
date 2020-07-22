@@ -1,11 +1,15 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+// Components
 import { DefaultLayout } from '@Component/DefaultLayout'
 import { SEO } from '@Component/Seo'
 
+// Configs
+import { PagesSummaryEnum } from '@Config/pagesSummary'
+
 const Blog: React.FC = () => (
-  <DefaultLayout>
+  <DefaultLayout page={PagesSummaryEnum.BLOG_PAGE}>
     <SEO title="Blog page" />
     <h1>BLOG: Under development</h1>
     <p>This page will be list all posts created inside "_posts" dir</p>
