@@ -43,7 +43,7 @@ export default function CustomTimeline({ experiences }: CustomTimelineProps) {
       description,
     } = experience
     return (
-      <TimelineItem>
+      <TimelineItem key={`timeline-item-${position}`}>
         <TimelineSeparator>
           <TimelineDot />
           {!lastItem && <TimelineConnector />}
