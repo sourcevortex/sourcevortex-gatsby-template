@@ -22,7 +22,7 @@ const staticPages = [
  * @param pageIndex pageIndex from enum
  */
 export function getPage(pageIndex: PagesSummaryEnum): string {
-  return staticPages[pageIndex]
+  return repository + staticPages[pageIndex]
 }
 
 export default staticPages
