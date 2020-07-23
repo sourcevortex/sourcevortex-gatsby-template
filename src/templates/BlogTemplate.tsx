@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 // Components
 import { DefaultLayout } from '@Component/DefaultLayout'
@@ -40,6 +40,9 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
           />
         </div>
       </div>
+      <br />
+      <hr />
+      <Link to="/blog">Voltar para o blog</Link>
     </DefaultLayout>
   )
 }
