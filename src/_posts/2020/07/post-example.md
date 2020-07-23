@@ -2,23 +2,17 @@
 file: '/blob/master/src/_posts/2020/07/post-example.md'
 slug: '/blog/2020/07/post-example'
 date: '2020-07-22'
-title: 'Only a example'
+title: 'ElectronJS close app'
 ---
 
-# Some example
+# Close Electron APP
 
-```js:title=test/index.js
-async function test() {
-  return false
-}
+[Source code](https://github.com/chsjr1996/electron-reactjs-template/blob/master/src/browser/main.ts)
 
-test()
+```ts:title=src/browser/main.ts
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
 ```
-
-```css
-.class-selector {
-  background-color: black;
-}
-```
-
-- [x] try display current language (plugin: show-language for prism.js)
