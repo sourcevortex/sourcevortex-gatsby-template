@@ -42,7 +42,7 @@ const HomePage: React.FC<PageProps<DataProps>> = ({ data, path }) => {
     <DefaultLayout page={getPage(Pg.HOME_PAGE)}>
       <SEO title="Home/About page" />
       <h1>{Profile.name}</h1>
-      <h2>{Profile.mailAddress}</h2>enum
+      <h2>{Profile.mailAddress}</h2>
       <StyledParagraph>{Profile.description}</StyledParagraph>
       <StyledSocialContainer>
         {Profile.socialNetworks.map(network => (
