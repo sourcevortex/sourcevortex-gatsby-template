@@ -22,7 +22,8 @@
       "@Page/*": ["pages/*"],
       "@Component/*": ["components/*"],
       "@Util/*": ["utils/*"],
-      "@Duck/*": ["store/ducks/*"]
+      "@Duck/*": ["store/ducks/*"],
+      "@PageStyle/*": ["pagesStyles/*"]
     }
   },
   "include": ["src", "src/index.tsx", "wrap-with-provider.tsx"]
