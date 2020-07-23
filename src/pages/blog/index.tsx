@@ -5,7 +5,9 @@ import { graphql, Link } from 'gatsby'
 import { DefaultLayout } from '@Component/DefaultLayout'
 import { SEO } from '@Component/Seo'
 import { Card } from '@Component/Card'
-import { StyledCardContainer, StyledLink } from './BlogStyles'
+
+// Styles
+import { StyledCardContainer, StyledLink } from '@PageStyle/BlogStyles'
 
 // Configs
 import { getPage, PagesSummaryEnum as Pg } from '@Config/pagesSummary'

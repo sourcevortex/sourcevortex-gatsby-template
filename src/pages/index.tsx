@@ -4,15 +4,17 @@ import Icon from '@material-ui/core/Icon'
 
 // Components
 import Tooltip from '@material-ui/core/Tooltip'
+import { DefaultLayout } from '@Component/DefaultLayout'
+import { SEO } from '@Component/Seo'
+import { CustomTimeline, Content } from '@Component/CustomTimeline'
+
+// Styles
 import {
   StyledSocialContainer,
   StyledSocialIconBox,
   StyledParagraph,
   StyledH3,
-} from '@Component/Home/IndexStyles'
-import { DefaultLayout } from '@Component/DefaultLayout'
-import { SEO } from '@Component/Seo'
-import { CustomTimeline, Content } from '@Component/CustomTimeline'
+} from '@PageStyle/IndexStyles'
 
 // Configs
 import Profile from '@Config/profile'
