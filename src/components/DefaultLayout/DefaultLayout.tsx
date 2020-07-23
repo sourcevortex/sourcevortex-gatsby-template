@@ -9,16 +9,13 @@ import './prism.css'
 import { Sidebar } from '@Component/Sidebar'
 import { StyledContainer } from './DefaultLayoutStyles'
 
-// Configs
-import { PagesSummaryEnum } from '@Config/pagesSummary'
-
 // Utils & Others
 import saveCurrentPage from '@Util/saveCurrentPage'
 import { AppStore } from '@Root/store'
 
 interface DefaultLayoutProps {
   children: React.ReactNode
-  page?: PagesSummaryEnum
+  page?: string
 }
 
 const DefaultLayout: React.FC<DefaultLayoutProps> = (
@@ -29,7 +26,7 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = (
   const store = useStore<AppStore>()
 
   useEffect(() => {
-    if (page >= 0) {
+    if (page) {
       saveCurrentPage(page, store)
     }
   }, [page])

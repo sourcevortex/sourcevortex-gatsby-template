@@ -14,9 +14,9 @@ import { DefaultLayout } from '@Component/DefaultLayout'
 import { SEO } from '@Component/Seo'
 import { CustomTimeline, Content } from '@Component/CustomTimeline'
 
-// Others
-import Profile from '@Root/config/profile'
-import { PagesSummaryEnum as Pg } from '@Root/config/pagesSummary'
+// Configs
+import Profile from '@Config/profile'
+import { getPage, PagesSummaryEnum as Pg } from '@Config/pagesSummary'
 
 type DataProps = {
   site: {
@@ -39,10 +39,10 @@ const HomePage: React.FC<PageProps<DataProps>> = ({ data, path }) => {
   })
 
   return (
-    <DefaultLayout page={Pg.HOME_PAGE}>
+    <DefaultLayout page={getPage(Pg.HOME_PAGE)}>
       <SEO title="Home/About page" />
       <h1>{Profile.name}</h1>
-      <h2>{Profile.mailAddress}</h2>
+      <h2>{Profile.mailAddress}</h2>enum
       <StyledParagraph>{Profile.description}</StyledParagraph>
       <StyledSocialContainer>
         {Profile.socialNetworks.map(network => (

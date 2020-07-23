@@ -6,10 +6,10 @@ import { DefaultLayout } from '@Component/DefaultLayout'
 import { SEO } from '@Component/Seo'
 
 // Config
-import { PagesSummaryEnum } from '@Root/config/pagesSummary'
+import { getPage, PagesSummaryEnum as Pg } from '@Root/config/pagesSummary'
 
 const Docs: React.FC = () => (
-  <DefaultLayout page={PagesSummaryEnum.DOCS_PAGE}>
+  <DefaultLayout page={getPage(Pg.DOCS_PAGE)}>
     <SEO title="Docs Page" />
     <h1>Docs: Under development</h1>
     <Link to="/">Go back to the homepage</Link>

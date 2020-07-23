@@ -5,12 +5,12 @@ import { Link } from 'gatsby'
 import { DefaultLayout } from '@Component/DefaultLayout'
 import { SEO } from '@Component/Seo'
 
-// Utils & Others
-import { PagesSummaryEnum as Pg } from '@Root/config/pagesSummary'
+// Configs
+import { getPage, PagesSummaryEnum as Pg } from '@Config/pagesSummary'
 
 const NotFoundPage: React.FC = () => {
   return (
-    <DefaultLayout page={Pg.NOT_FOUND}>
+    <DefaultLayout page={getPage(Pg.NOT_FOUND)}>
       <SEO title="404: Not found" />
       <h1>NOT FOUND</h1>
       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>

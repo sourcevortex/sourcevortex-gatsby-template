@@ -1,13 +1,35 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
+// Components
 import { DefaultLayout } from '@Component/DefaultLayout'
 
-export default function Template({ data }) {
-  const { markdownRemark } = data
-  const { frontmatter, html } = markdownRemark
+// Configs
+import { repository } from '@Config/pagesSummary'
+
+interface BlogTemplateProps {
+  data: {
+    markdownRemark: {
+      html: string
+      frontmatter: {
+        file: string
+        date: string
+        slug: string
+        title: string
+      }
+    }
+  }
+}
+
+export default function Template(props: BlogTemplateProps): JSX.Element {
+  const {
+    data: {
+      markdownRemark: { frontmatter, html },
+    },
+  } = props
+  const fileUrl = frontmatter.file ? repository + frontmatter.file : ''
   return (
-    <DefaultLayout>
+    <DefaultLayout page={fileUrl}>
       <div className="blog-post-container">
         <div className="blog-post">
           <h1>{frontmatter.title}</h1>
@@ -27,6 +49,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       frontmatter {
+        file
         date(formatString: "MMMM DD, YYYY")
         slug
         title
