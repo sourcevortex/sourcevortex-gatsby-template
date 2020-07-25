@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 
 // Components
 import { DefaultLayout } from '@Component/DefaultLayout'
@@ -12,31 +12,13 @@ import * as S from '@PageStyle/BlogStyles'
 // Configs
 import { getPage, PagesSummaryEnum as Pg } from '@Config/pagesSummary'
 
-interface BlogProps {
-  data: {
-    allMarkdownRemark: {
-      edges: {
-        node: {
-          id: string
-          excerpt: string
-          frontmatter: {
-            date: string
-            slug: string
-            title: string
-            image: string
-          }
-        }
-      }[]
-    }
-  }
-}
+// Hooks
+import useBlogPosts from '@Hook/use-blog-posts'
 
-const Blog: React.FC<BlogProps> = (props: BlogProps) => {
+const Blog: React.FC = () => {
   const {
-    data: {
-      allMarkdownRemark: { edges },
-    },
-  } = props
+    allMarkdownRemark: { edges },
+  } = useBlogPosts()
 
   return (
     <DefaultLayout page={getPage(Pg.BLOG_PAGE)}>
@@ -54,32 +36,8 @@ const Blog: React.FC<BlogProps> = (props: BlogProps) => {
           </S.StyLink>
         ))}
       </S.CardContainer>
-      {/* Just ignore this rsrs... */}
-      <br />
-      <br />
-      <br />
-      {/* :P */}
     </DefaultLayout>
   )
 }
-
-export const pageQuery = graphql`
-  query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 250)
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            slug
-            title
-            image
-          }
-        }
-      }
-    }
-  }
-`
 
 export default Blog

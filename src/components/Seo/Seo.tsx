@@ -1,30 +1,19 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
 
-interface ISEOProps {
+// Hooks
+import useSiteMetadata from '@Hook/use-site-metadata'
+
+interface SEOProps {
   description?: string
   lang?: string
   meta?: any[]
   title: string
 }
 
-const SEO = (props: ISEOProps) => {
+const SEO = (props: SEOProps) => {
   const { description, lang, meta, title } = props
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-            image
-          }
-        }
-      }
-    `
-  )
+  const site = useSiteMetadata()
 
   const metaDescription = description || site.siteMetadata.description
 
