@@ -16,6 +16,11 @@ export const Container = styled.div`
   }
 `
 
+export const StyLink = styled.a`
+  color: white;
+  text-decoration: none;
+`
+
 export const StyFab = styled(Fab)`
   background-color: #111111 !important;
 
