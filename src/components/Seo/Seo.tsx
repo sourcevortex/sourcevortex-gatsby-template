@@ -19,6 +19,7 @@ const SEO = (props: ISEOProps) => {
             title
             description
             author
+            image
           }
         }
       }
@@ -46,6 +47,10 @@ const SEO = (props: ISEOProps) => {
         {
           property: `og:description`,
           content: metaDescription,
+        },
+        {
+          property: `og:image`,
+          content: site.siteMetadata.image,
         },
         {
           property: `og:type`,

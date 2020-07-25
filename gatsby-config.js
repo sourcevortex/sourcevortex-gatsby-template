@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Carlos Henrique | Resume, Blog & Docs `,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Carlos Henrique | Sobre, Blog & Projetos `,
+    description: `Blog pessoal sobre tecnologia, programação, distribuições Linux e muito mais!`,
+    author: `@chsjr1996`,
+    image: `/images/generic/source_vortex.png`,
+    siteUrl: `http://chsjr1996.github.io`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
