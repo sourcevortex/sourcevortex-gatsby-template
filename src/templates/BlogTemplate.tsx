@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 
 // Components
-import { DefaultLayout } from '@Component/DefaultLayout'
+import DefaultLayout from '@Component/DefaultLayout'
 import * as S from '@PageStyle/BlogTemplateStyles'
 
 // Configs

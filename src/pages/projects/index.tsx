@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 // Components
-import { DefaultLayout } from '@Component/DefaultLayout'
-import { SEO } from '@Component/Seo'
+import DefaultLayout from '@Component/DefaultLayout'
+import SEO from '@Component/Seo'
 
 // Config
 import { getPage, PagesSummaryEnum as Pg } from '@Root/config/pagesSummary'

@@ -4,11 +4,9 @@ import Icon from '@material-ui/core/Icon'
 
 // Components
 import Tooltip from '@material-ui/core/Tooltip'
-import { DefaultLayout } from '@Component/DefaultLayout'
-import { SEO } from '@Component/Seo'
-import { CustomTimeline, Content } from '@Component/CustomTimeline'
-
-// Styles
+import DefaultLayout from '@Component/DefaultLayout'
+import SEO from '@Component/Seo'
+import CustomTimeline, { Content } from '@Component/CustomTimeline'
 import * as S from '@PageStyle/IndexStyles'
 
 // Configs

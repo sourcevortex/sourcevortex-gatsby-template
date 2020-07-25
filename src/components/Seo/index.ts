@@ -1,1 +1,2 @@
-export { default as SEO } from './Seo'
+import SEO from './Seo'
+export default SEO

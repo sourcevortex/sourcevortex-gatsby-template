@@ -1,10 +1,9 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
 
 // Components
-import { DefaultLayout } from '@Component/DefaultLayout'
-import { SEO } from '@Component/Seo'
-import { Card } from '@Component/Card'
+import DefaultLayout from '@Component/DefaultLayout'
+import SEO from '@Component/Seo'
+import Card from '@Component/Card'
 
 // Styles
 import * as S from '@PageStyle/BlogStyles'

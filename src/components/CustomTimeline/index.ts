@@ -1,2 +1,3 @@
-export { default as CustomTimeline } from './CustomTimeline'
-export type { Content } from './CustomTimeline'
+import CustomTimeLine, { Content } from './CustomTimeline'
+export default CustomTimeLine
+export type { Content }
