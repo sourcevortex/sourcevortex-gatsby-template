@@ -1,3 +1,15 @@
 {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "cSpell.language": ",pt,pt_BR",
+    "cSpell.words": [
+        "Chrome",
+        "Chromium",
+        "Svelte",
+        "electronjs",
+        "framework",
+        "frameworks",
+        "posts",
+        "preload",
+        "renderer"
+    ]
 }
