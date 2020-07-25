@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import { useStore } from 'react-redux'
+import React from 'react'
 
 // Main CSS
 import './layout.css'
@@ -11,35 +10,21 @@ import Sidebar from '@Component/Sidebar'
 import FloatEdit from '@Component/FloatEdit'
 import * as S from './DefaultLayoutStyles'
 
-// Utils & Others
-import saveCurrentPage from '@Util/saveCurrentPage'
-import { AppStore } from '@Root/store'
-
 interface DefaultLayoutProps {
   children: React.ReactNode
   page?: string
 }
 
-const DefaultLayout: React.FC<DefaultLayoutProps> = (
-  props: DefaultLayoutProps
-) => {
+const DefaultLayout: React.FC<DefaultLayoutProps> = props => {
   const { children, page } = props
-
-  const store = useStore<AppStore>()
-
-  useEffect(() => {
-    if (page) {
-      saveCurrentPage(page, store)
-    }
-  }, [page])
 
   return (
     <>
       <Header />
-      <Sidebar />
+      <Sidebar page={page} />
       <S.Container>
         <main>{children}</main>
-        <FloatEdit />
+        <FloatEdit page={page} />
       </S.Container>
     </>
   )

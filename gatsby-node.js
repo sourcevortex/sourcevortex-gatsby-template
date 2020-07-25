@@ -51,8 +51,6 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         '@Hook': path.resolve(__dirname, 'src', 'hooks'),
         '@Page': path.resolve(__dirname, 'src', 'pages'),
         '@Component': path.resolve(__dirname, 'src', 'components'),
-        '@Util': path.resolve(__dirname, 'src', 'utils'),
-        '@Duck': path.resolve(__dirname, 'src', 'store', 'ducks'),
         '@PageStyle': path.resolve(__dirname, 'src', 'pagesStyles'),
       },
     },

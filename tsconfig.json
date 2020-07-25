@@ -22,8 +22,6 @@
       "@Hook/*": ["hooks/*"],
       "@Page/*": ["pages/*"],
       "@Component/*": ["components/*"],
-      "@Util/*": ["utils/*"],
-      "@Duck/*": ["store/ducks/*"],
       "@PageStyle/*": ["pagesStyles/*"]
     }
   },

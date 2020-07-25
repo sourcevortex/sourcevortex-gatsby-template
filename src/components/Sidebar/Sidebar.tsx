@@ -1,15 +1,10 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 
 // Components
 import Tooltip from '@material-ui/core/Tooltip'
 import * as S from './SidebarStyles'
 
-import { AppStore } from '@Root/store'
-
-const Sidebar: React.FC = () => {
-  const currentPage = useSelector((state: AppStore) => state.app.page)
-
+const Sidebar: React.FC<{ page: string }> = ({ page }) => {
   return (
     <S.SidebarContainer>
       <S.SidebarSubContainer>
@@ -32,7 +27,7 @@ const Sidebar: React.FC = () => {
         </S.TopContainer>
         <S.BottomContainer>
           <Tooltip title="Editar no github">
-            <S.Anchor href={currentPage} target="_blank">
+            <S.Anchor href={page} target="_blank">
               <S.StyEditIcon />
             </S.Anchor>
           </Tooltip>
