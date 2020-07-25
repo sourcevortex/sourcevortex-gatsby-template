@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography'
 import device from '@Config/devices'
 
 export const Container = styled.div`
-  width: 85%;
+  width: 100%;
 
   .MuiTimelineItem-missingOppositeContent::before {
     flex: unset;
@@ -23,8 +23,8 @@ export const Container = styled.div`
     margin-bottom: 0;
   }
 
-  @media ${device.mobileL} {
-    width: 100%;
+  @media ${device.tablet} {
+    width: 85%;
   }
 `
 
