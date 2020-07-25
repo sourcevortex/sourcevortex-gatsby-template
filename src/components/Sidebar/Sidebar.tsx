@@ -3,18 +3,7 @@ import { useSelector } from 'react-redux'
 
 // Components
 import Tooltip from '@material-ui/core/Tooltip'
-import {
-  StyledSidebarContainer,
-  StyledSidebarSubContainer,
-  StyledTopContainer,
-  StyledBottomContainer,
-  StyledLink,
-  StyledAnchor,
-  StyledHomeIcon,
-  StyledBookIcon,
-  StyledMenuBookIcon,
-  StyledEditIcon,
-} from './SidebarStyles'
+import * as S from './SidebarStyles'
 
 import { AppStore } from '@Root/store'
 
@@ -22,34 +11,34 @@ const Sidebar: React.FC = () => {
   const currentPage = useSelector((state: AppStore) => state.app.page)
 
   return (
-    <StyledSidebarContainer>
-      <StyledSidebarSubContainer>
-        <StyledTopContainer>
+    <S.SidebarContainer>
+      <S.SidebarSubContainer>
+        <S.TopContainer>
           <Tooltip title="Home">
-            <StyledLink to="/">
-              <StyledHomeIcon />
-            </StyledLink>
+            <S.StyLink to="/">
+              <S.StyHomeIcon />
+            </S.StyLink>
           </Tooltip>
           <Tooltip title="Blog">
-            <StyledLink to="/blog">
-              <StyledBookIcon />
-            </StyledLink>
+            <S.StyLink to="/blog">
+              <S.StyBookIcon />
+            </S.StyLink>
           </Tooltip>
           <Tooltip title="Docs">
-            <StyledLink to="/docs">
-              <StyledMenuBookIcon />
-            </StyledLink>
+            <S.StyLink to="/docs">
+              <S.StyMenuBookIcon />
+            </S.StyLink>
           </Tooltip>
-        </StyledTopContainer>
-        <StyledBottomContainer>
+        </S.TopContainer>
+        <S.BottomContainer>
           <Tooltip title="Editar no github">
-            <StyledAnchor href={currentPage} target="_blank">
-              <StyledEditIcon />
-            </StyledAnchor>
+            <S.Anchor href={currentPage} target="_blank">
+              <S.StyEditIcon />
+            </S.Anchor>
           </Tooltip>
-        </StyledBottomContainer>
-      </StyledSidebarSubContainer>
-    </StyledSidebarContainer>
+        </S.BottomContainer>
+      </S.SidebarSubContainer>
+    </S.SidebarContainer>
   )
 }
 

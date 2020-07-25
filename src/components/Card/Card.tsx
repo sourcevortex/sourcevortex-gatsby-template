@@ -1,12 +1,6 @@
 import React from 'react'
 
-import {
-  Container,
-  PictureBox,
-  InfoContainer,
-  Title,
-  SubTitle,
-} from './CardStyles'
+import * as S from './CardStyles'
 
 interface CardProps {
   title: string
@@ -15,13 +9,13 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = (props: CardProps) => {
   return (
-    <Container>
-      <PictureBox />
-      <InfoContainer>
-        <Title>{props.title}</Title>
-        <SubTitle>{props.subtitle}</SubTitle>
-      </InfoContainer>
-    </Container>
+    <S.Container>
+      <S.PictureBox />
+      <S.InfoContainer>
+        <S.Title>{props.title}</S.Title>
+        <S.SubTitle>{props.subtitle}</S.SubTitle>
+      </S.InfoContainer>
+    </S.Container>
   )
 }
 

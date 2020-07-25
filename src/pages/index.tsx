@@ -9,12 +9,7 @@ import { SEO } from '@Component/Seo'
 import { CustomTimeline, Content } from '@Component/CustomTimeline'
 
 // Styles
-import {
-  StyledSocialContainer,
-  StyledSocialIconBox,
-  StyledParagraph,
-  StyledH3,
-} from '@PageStyle/IndexStyles'
+import * as S from '@PageStyle/IndexStyles'
 
 // Configs
 import Profile from '@Config/profile'
@@ -45,19 +40,19 @@ const HomePage: React.FC<PageProps<DataProps>> = ({ data, path }) => {
       <SEO title="Home/About page" />
       <h1>{Profile.name}</h1>
       <h2>{Profile.mailAddress}</h2>
-      <StyledParagraph>{Profile.description}</StyledParagraph>
-      <StyledSocialContainer>
+      <S.Paragraph>{Profile.description}</S.Paragraph>
+      <S.SocialContainer>
         {Profile.socialNetworks.map(network => (
           <Tooltip key={`tooltip-${network.name}`} title={network.name}>
-            <StyledSocialIconBox>
+            <S.SocialIconBox>
               <a href={network.url} target="_blank">
                 <Icon style={{ color: 'white' }} className={network.icon} />
               </a>
-            </StyledSocialIconBox>
+            </S.SocialIconBox>
           </Tooltip>
         ))}
-      </StyledSocialContainer>
-      <StyledH3>Experiência</StyledH3>
+      </S.SocialContainer>
+      <S.H3>Experiência</S.H3>
       <CustomTimeline contents={timelineContents} />
     </DefaultLayout>
   )

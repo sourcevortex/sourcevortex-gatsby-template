@@ -7,7 +7,7 @@ import { SEO } from '@Component/Seo'
 import { Card } from '@Component/Card'
 
 // Styles
-import { StyledCardContainer, StyledLink } from '@PageStyle/BlogStyles'
+import * as S from '@PageStyle/BlogStyles'
 
 // Configs
 import { getPage, PagesSummaryEnum as Pg } from '@Config/pagesSummary'
@@ -43,13 +43,13 @@ const Blog: React.FC<BlogProps> = (props: BlogProps) => {
       <h1>BLOG: Em desenvolvimento</h1>
       <h2>...todo layout será melhorado em breve</h2>
 
-      <StyledCardContainer>
+      <S.CardContainer>
         {edges.map(({ node }) => (
-          <StyledLink to={node.frontmatter.slug}>
+          <S.StyLink to={node.frontmatter.slug}>
             <Card title={node.frontmatter.title} subtitle="" />
-          </StyledLink>
+          </S.StyLink>
         ))}
-      </StyledCardContainer>
+      </S.CardContainer>
       {/* Just ignore this rsrs... */}
       <br />
       <br />

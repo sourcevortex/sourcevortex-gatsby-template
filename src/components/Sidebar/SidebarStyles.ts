@@ -7,7 +7,7 @@ import BookIcon from '@material-ui/icons/Book'
 import MenuBookIcon from '@material-ui/icons/MenuBook'
 import EditIcon from '@material-ui/icons/Edit'
 
-export const StyledSidebarContainer = styled.div`
+export const SidebarContainer = styled.div`
   display: flex;
   align-items: center;
   position: fixed;
@@ -15,7 +15,7 @@ export const StyledSidebarContainer = styled.div`
   height: 100vh;
 `
 
-export const StyledSidebarSubContainer = styled.div`
+export const SidebarSubContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -27,33 +27,33 @@ export const StyledSidebarSubContainer = styled.div`
   margin-left: 10px;
 `
 
-export const StyledTopContainer = styled.div`
+export const TopContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `
 
-export const StyledBottomContainer = styled.div`
+export const BottomContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `
 
-export const StyledLink = styled(Link)`
+export const StyLink = styled(Link)`
   color: white;
   text-decoration: none;
   margin: 10px 0;
 `
 
-export const StyledAnchor = styled.a`
+export const Anchor = styled.a`
   color: white;
   text-decoration: none;
 `
 
-export const StyledHomeIcon = styled(HomeIcon)``
+export const StyHomeIcon = styled(HomeIcon)``
 
-export const StyledBookIcon = styled(BookIcon)``
+export const StyBookIcon = styled(BookIcon)``
 
-export const StyledMenuBookIcon = styled(MenuBookIcon)``
+export const StyMenuBookIcon = styled(MenuBookIcon)``
 
-export const StyledEditIcon = styled(EditIcon)``
+export const StyEditIcon = styled(EditIcon)``

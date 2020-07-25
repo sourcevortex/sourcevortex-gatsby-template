@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 import Typography from '@material-ui/core/Typography'
 
-export const StyledSocialContainer = styled.div`
+export const SocialContainer = styled.div`
   display: flex;
   margin: 30px 0;
 `
 
-export const StyledSocialIconBox = styled.div`
+export const SocialIconBox = styled.div`
   width: 40px;
   height: 40px;
   margin-right: 10px;
@@ -27,9 +27,9 @@ export const StyledSocialIconBox = styled.div`
     text-decoration: none;
   }
 `
-export const StyledParagraph = styled(Typography)``
+export const Paragraph = styled(Typography)``
 
-export const StyledH3 = styled(Typography).attrs(() => ({
+export const H3 = styled(Typography).attrs(() => ({
   component: 'h3',
 }))`
   font-size: 2rem !important;
