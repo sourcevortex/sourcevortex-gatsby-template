@@ -21,14 +21,14 @@ const Sidebar: React.FC = () => {
           </Tooltip>
           <Tooltip title="Blog">
             <S.StyLink to="/blog">
-              <S.StyBookIcon />
-            </S.StyLink>
-          </Tooltip>
-          <Tooltip title="Docs">
-            <S.StyLink to="/docs">
               <S.StyMenuBookIcon />
             </S.StyLink>
           </Tooltip>
+          {/* <Tooltip title="Projetos">
+            <S.StyLink to="/projects">
+              <S.StyMenuBookIcon />
+            </S.StyLink>
+          </Tooltip> */}
         </S.TopContainer>
         <S.BottomContainer>
           <Tooltip title="Editar no github">
