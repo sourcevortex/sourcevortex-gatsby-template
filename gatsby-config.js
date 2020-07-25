@@ -4,7 +4,6 @@ module.exports = {
     description: `Blog pessoal sobre tecnologia, programação, distribuições Linux e muito mais!`,
     author: `@chsjr1996`,
     image: `/images/generic/source_vortex.png`,
-    siteUrl: `http://chsjr1996.github.io`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
