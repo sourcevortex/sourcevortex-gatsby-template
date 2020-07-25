@@ -41,8 +41,7 @@ const Blog: React.FC<BlogProps> = (props: BlogProps) => {
   return (
     <DefaultLayout page={getPage(Pg.BLOG_PAGE)}>
       <SEO title="Blog page" />
-      <h1>BLOG: Em desenvolvimento</h1>
-      <h2>...todo layout será melhorado em breve</h2>
+      <h1>BLOG</h1>
 
       <S.CardContainer>
         {edges.map(({ node }) => (
