@@ -5,15 +5,17 @@ import * as S from './CardStyles'
 interface CardProps {
   title: string
   subtitle: string
+  image?: string
 }
 
 const Card: React.FC<CardProps> = (props: CardProps) => {
+  const { title, subtitle, image } = props
   return (
     <S.Container>
-      <S.PictureBox />
+      <S.PictureBox src={image} />
       <S.InfoContainer>
-        <S.Title>{props.title}</S.Title>
-        <S.SubTitle>{props.subtitle}</S.SubTitle>
+        <S.Title>{title}</S.Title>
+        <S.SubTitle>{subtitle}</S.SubTitle>
       </S.InfoContainer>
     </S.Container>
   )

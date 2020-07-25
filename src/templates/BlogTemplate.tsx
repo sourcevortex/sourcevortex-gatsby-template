@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby'
 
 // Components
 import { DefaultLayout } from '@Component/DefaultLayout'
+import * as S from '@PageStyle/BlogTemplateStyles'
 
 // Configs
 import { repository } from '@Config/pagesSummary'
@@ -16,6 +17,7 @@ interface BlogTemplateProps {
         date: string
         slug: string
         title: string
+        image: string
       }
     }
   }
@@ -24,22 +26,21 @@ interface BlogTemplateProps {
 export default function Template(props: BlogTemplateProps): JSX.Element {
   const {
     data: {
-      markdownRemark: { frontmatter, html },
+      markdownRemark: {
+        frontmatter: { file, date, slug, title, image },
+        html,
+      },
     },
   } = props
-  const fileUrl = frontmatter.file ? repository + frontmatter.file : ''
+  const fileUrl = file ? repository + file : ''
   return (
     <DefaultLayout page={fileUrl}>
-      <div className="blog-post-container">
-        <div className="blog-post">
-          <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.date}</h2>
-          <div
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        </div>
-      </div>
+      <S.Container>
+        <S.CoverImage src={image} />
+        <S.Title>{title}</S.Title>
+        <S.PostDate>- {date} -</S.PostDate>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+      </S.Container>
       <br />
       <hr />
       <Link to="/blog">Voltar para o blog</Link>
@@ -56,6 +57,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         slug
         title
+        image
       }
     }
   }

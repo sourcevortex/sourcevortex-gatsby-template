@@ -23,6 +23,7 @@ interface BlogProps {
             date: string
             slug: string
             title: string
+            image: string
           }
         }
       }[]
@@ -46,7 +47,11 @@ const Blog: React.FC<BlogProps> = (props: BlogProps) => {
       <S.CardContainer>
         {edges.map(({ node }) => (
           <S.StyLink to={node.frontmatter.slug}>
-            <Card title={node.frontmatter.title} subtitle="" />
+            <Card
+              title={node.frontmatter.title}
+              subtitle=""
+              image={node.frontmatter.image}
+            />
           </S.StyLink>
         ))}
       </S.CardContainer>
@@ -70,6 +75,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             slug
             title
+            image
           }
         }
       }
