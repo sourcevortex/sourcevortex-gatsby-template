@@ -7,12 +7,19 @@ import BookIcon from '@material-ui/icons/Book'
 import MenuBookIcon from '@material-ui/icons/MenuBook'
 import EditIcon from '@material-ui/icons/Edit'
 
+// Configs
+import device from '@Config/devices'
+
 export const SidebarContainer = styled.div`
-  display: flex;
+  display: none;
   align-items: center;
   position: fixed;
   width: 60px;
   height: 100vh;
+
+  @media ${device.tablet} {
+    display: flex;
+  }
 `
 
 export const SidebarSubContainer = styled.div`

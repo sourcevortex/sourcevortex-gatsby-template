@@ -1,13 +1,15 @@
 import styled from 'styled-components'
 
-export const StyledContainer = styled.div`
-  height: 100vh;
+// Configs
+import device from '@Config/devices'
+
+export const Container = styled.div`
+  position: relative;
   margin: 0 auto;
   max-width: 960px;
-  padding: 3rem 1.45rem;
-`
+  padding: 4rem 1.45rem;
 
-export const StyledFooter = styled.footer`
-  position: absolute;
-  bottom: 0;
+  @media ${device.tablet} {
+    padding: 3rem 4rem;
+  }
 `

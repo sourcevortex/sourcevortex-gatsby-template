@@ -1,11 +1,23 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
+import device from '@Config/devices'
+
 export const CardContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+  padding: 0 10%;
+
+  @media ${device.tablet} {
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+  }
+
+  @media ${device.laptop} {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 `
 
 export const StyLink = styled(Link)`

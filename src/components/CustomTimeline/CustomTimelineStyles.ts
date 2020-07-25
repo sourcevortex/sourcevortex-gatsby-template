@@ -1,6 +1,11 @@
 import styled from 'styled-components'
+
+// Components
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
+
+// Configs
+import device from '@Config/devices'
 
 export const Container = styled.div`
   width: 85%;
@@ -16,6 +21,10 @@ export const Container = styled.div`
 
   li.MuiTimelineItem-root {
     margin-bottom: 0;
+  }
+
+  @media ${device.mobileL} {
+    width: 100%;
   }
 `
 

@@ -6,8 +6,10 @@ import './layout.css'
 import './prism.css'
 
 // Components
-import { Sidebar } from '@Component/Sidebar'
-import { StyledContainer } from './DefaultLayoutStyles'
+import Header from '@Component/Header'
+import Sidebar from '@Component/Sidebar'
+import FloatEdit from '@Component/FloatEdit'
+import * as S from './DefaultLayoutStyles'
 
 // Utils & Others
 import saveCurrentPage from '@Util/saveCurrentPage'
@@ -33,10 +35,12 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = (
 
   return (
     <>
+      <Header />
       <Sidebar />
-      <StyledContainer>
+      <S.Container>
         <main>{children}</main>
-      </StyledContainer>
+        <FloatEdit />
+      </S.Container>
     </>
   )
 }
