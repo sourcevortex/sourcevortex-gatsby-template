@@ -35,7 +35,7 @@ const HomePage: React.FC<PageProps<DataProps>> = ({ data, path }) => {
 
   return (
     <DefaultLayout page={getPage(Pg.HOME_PAGE)}>
-      <SEO title="Home/About page" />
+      <SEO title="Sobre" />
       <h1>{Profile.name}</h1>
       <h2>{Profile.mailAddress}</h2>
       <S.Paragraph>{Profile.description}</S.Paragraph>
