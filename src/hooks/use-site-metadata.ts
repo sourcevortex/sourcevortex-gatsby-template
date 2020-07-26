@@ -6,6 +6,7 @@ interface SiteData {
     description: string
     author: string
     image: string
+    siteUrl: string
   }
 }
 
@@ -19,6 +20,7 @@ const useSiteMetadata = (): SiteData => {
             description
             author
             image
+            siteUrl
           }
         }
       }

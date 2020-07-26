@@ -1,8 +1,8 @@
 import React from 'react'
 import { PageProps, graphql } from 'gatsby'
-import Icon from '@material-ui/core/Icon'
 
 // Components
+import Icon from '@material-ui/core/Icon'
 import Tooltip from '@material-ui/core/Tooltip'
 import DefaultLayout from '@Component/DefaultLayout'
 import SEO from '@Component/Seo'

@@ -38,8 +38,12 @@ const SEO = (props: SEOProps) => {
           content: metaDescription,
         },
         {
+          property: `og:url`,
+          content: site.siteMetadata.siteUrl,
+        },
+        {
           property: `og:image`,
-          content: site.siteMetadata.image,
+          content: site.siteMetadata.siteUrl + site.siteMetadata.image,
         },
         {
           property: `og:type`,
