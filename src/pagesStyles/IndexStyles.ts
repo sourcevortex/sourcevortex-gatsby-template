@@ -26,6 +26,10 @@ export const SocialIconBox = styled.div`
     height: 100%;
     text-decoration: none;
   }
+
+  span {
+    text-align: center;
+  }
 `
 export const Paragraph = styled(Typography)``
 
