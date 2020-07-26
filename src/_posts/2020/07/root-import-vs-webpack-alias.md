@@ -4,6 +4,15 @@ image: '2020/07/root_x_alias.png'
 slug: '/blog/2020/07/root-import-vs-webpack-alias'
 date: '2020-07-25 23:20:00'
 title: 'ReactJS - Root import VS Webpack alias'
+tags:
+  - Javascript
+  - ReactJS
+badgeColors:
+  - 'black'
+  - 'black'
+badgeBackgrounds:
+  - '#f7df1e'
+  - '#4cdafe'
 ---
 
 ### O que é Root import?

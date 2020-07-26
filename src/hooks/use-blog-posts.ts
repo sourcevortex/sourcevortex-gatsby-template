@@ -1,18 +1,23 @@
 import { useStaticQuery, graphql } from 'gatsby'
 
+export interface EdgesNode {
+  id: string
+  excerpt: string
+  frontmatter: {
+    date: string
+    slug: string
+    title: string
+    image: string
+    tags: string[]
+    badgeColors: string[]
+    badgeBackgrounds: string[]
+  }
+}
+
 interface BlogPosts {
   allMarkdownRemark: {
     edges: {
-      node: {
-        id: string
-        excerpt: string
-        frontmatter: {
-          date: string
-          slug: string
-          title: string
-          image: string
-        }
-      }
+      node: EdgesNode
     }[]
   }
 }
@@ -30,6 +35,9 @@ const useBlogPosts = (): BlogPosts => {
               slug
               title
               image
+              tags
+              badgeColors
+              badgeBackgrounds
             }
           }
         }

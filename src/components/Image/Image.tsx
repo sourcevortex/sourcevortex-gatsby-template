@@ -5,7 +5,12 @@ import Img from 'gatsby-image'
 // Hooks
 import useAllFileImage, { AllFileData } from '@Hook/use-all-file-image'
 
-const Image = ({ src, ...props }: { src: string }) => {
+interface ImageProps {
+  src: string
+  style?: React.CSSProperties
+}
+
+const Image: React.FC<ImageProps> = ({ src, style, ...props }) => {
   const findImage = (data: AllFileData) => {
     const foundedImg = data.allFile.nodes.find(
       ({ relativePath }) => src === relativePath
@@ -24,7 +29,11 @@ const Image = ({ src, ...props }: { src: string }) => {
   const match = useMemo(() => findImage(data), [data, src])
   const fluid = get(match, 'childImageSharp.fluid')
 
-  return fluid ? <Img fluid={fluid} Tag="div" {...props} /> : null
+  return fluid ? <Img fluid={fluid} Tag="div" {...props} style={style} /> : null
+}
+
+Image.defaultProps = {
+  style: {},
 }
 
 export default Image
