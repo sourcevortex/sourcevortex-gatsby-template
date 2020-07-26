@@ -2,7 +2,7 @@
 file: '/blob/master/src/_posts/2020/07/the-awesome-electronjs.md'
 image: '2020/07/electron_template.png'
 slug: '/blog/2020/07/the-awesome-electronjs'
-date: '2020-07-25'
+date: '2020-07-25 19:00:00'
 title: 'O incrível ElectronJS'
 ---
 
