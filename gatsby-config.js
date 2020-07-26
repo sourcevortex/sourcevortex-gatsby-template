@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Carlos Henrique | Sobre, Blog & Projetos `,
+    title: `Source Vortex | Blog & Portfólio`,
     description: `Blog pessoal sobre tecnologia, programação, distribuições Linux e muito mais!`,
     author: `@chsjr1996`,
     image: `/images/generic/source_vortex.png`,
-    siteUrl: `https://chsjr1996.github.io`,
+    siteUrl: `https://sourcevortex.com.br/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

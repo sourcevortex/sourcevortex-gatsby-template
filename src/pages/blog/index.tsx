@@ -21,7 +21,7 @@ const Blog: React.FC = () => {
 
   return (
     <DefaultLayout page={getPage(Pg.BLOG_PAGE)}>
-      <SEO title="Blog page" />
+      <SEO title="Blog" />
       <h1>BLOG</h1>
 
       <S.CardContainer>

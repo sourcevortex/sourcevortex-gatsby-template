@@ -11,7 +11,7 @@ interface SEOProps {
   title: string
 }
 
-const SEO = (props: SEOProps) => {
+const SEO: React.FC<SEOProps> = props => {
   const { description, lang, meta, title } = props
   const site = useSiteMetadata()
 

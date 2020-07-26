@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby'
 
 // Components
 import DefaultLayout from '@Component/DefaultLayout'
+import SEO from '@Component/Seo'
 import * as S from '@PageStyle/BlogTemplateStyles'
 
 // Configs
@@ -35,6 +36,7 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
   const fileUrl = file ? repository + file : ''
   return (
     <DefaultLayout page={fileUrl}>
+      <SEO title={title} />
       <S.Container>
         <S.CoverImage src={image} />
         <S.Title>{title}</S.Title>
