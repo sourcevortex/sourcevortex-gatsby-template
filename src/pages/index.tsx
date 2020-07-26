@@ -11,7 +11,6 @@ import * as S from '@PageStyle/IndexStyles'
 
 // Configs
 import Profile from '@Config/profile'
-import { getPage, PagesSummaryEnum as Pg } from '@Config/pagesSummary'
 
 type DataProps = {
   site: {
@@ -34,7 +33,7 @@ const HomePage: React.FC<PageProps<DataProps>> = ({ data, path }) => {
   })
 
   return (
-    <DefaultLayout page={getPage(Pg.HOME_PAGE)}>
+    <DefaultLayout>
       <SEO title="Sobre" />
       <h1>{Profile.name}</h1>
       <h2>{Profile.mailAddress}</h2>
