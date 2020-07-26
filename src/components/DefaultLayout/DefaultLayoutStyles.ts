@@ -10,6 +10,6 @@ export const Container = styled.div`
   padding: 4rem 1.45rem;
 
   @media ${device.tablet} {
-    padding: 3rem 4rem;
+    padding: 4rem 4rem;
   }
 `

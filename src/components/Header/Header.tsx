@@ -1,19 +1,34 @@
 import React from 'react'
 
 // Components
-import HomeIcon from '@material-ui/icons/Home'
-import MenuBookIcon from '@material-ui/icons/MenuBook'
 import * as S from './HeaderStyles'
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  openSideMenu: (open: boolean) => void
+}
+
+const Header: React.FC<HeaderProps> = props => {
+  const { openSideMenu } = props
+
   return (
     <S.Container>
-      <S.StyLink to="/">
-        <HomeIcon />
-      </S.StyLink>
-      <S.StyLink to="/blog">
-        <MenuBookIcon />
-      </S.StyLink>
+      <S.LeftContainer>
+        <S.StyMenuIcon onClick={() => openSideMenu(true)} />
+        <S.TextLink to="/" className="sv-left-logo">
+          <S.BlogLogo>SourceVortex</S.BlogLogo>
+        </S.TextLink>
+      </S.LeftContainer>
+      <S.CenterContainer>
+        <S.TextLink to="/">
+          <S.BlogLogo>SourceVortex</S.BlogLogo>
+        </S.TextLink>
+      </S.CenterContainer>
+      <S.RightContainer>
+        <S.TextLink to="/blog">
+          <S.HeaderMenuItemText>Blog</S.HeaderMenuItemText>
+        </S.TextLink>
+        <S.StySearchIcon />
+      </S.RightContainer>
     </S.Container>
   )
 }
