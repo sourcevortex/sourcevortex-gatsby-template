@@ -7,6 +7,7 @@ export const Container = styled.div`
   position: fixed;
   right: 15px;
   bottom: 15px;
+  z-index: 2;
 `
 
 export const StyLink = styled.a`
