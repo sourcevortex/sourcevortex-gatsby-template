@@ -36,9 +36,9 @@ export const Badge = styled.div<{ background: string }>`
   box-shadow: 1px 1px 5px 1px #888;
 `
 
-export const BadgeText = styled(Typography)<{ txtColor: string }>`
+export const BadgeText = styled(Typography)<{ txtcolor: string }>`
   font-size: 16px !important;
-  color: ${props => props.txtColor || 'white'};
+  color: ${props => props.txtcolor || 'white'};
 `
 
 export const InfoContainer = styled.div`

@@ -27,11 +27,11 @@ const Blog: React.FC = () => {
     const background = get(badgeBackgrounds, '[0]', null)
 
     return (
-      <S.StyLink to={node.frontmatter.slug}>
+      <S.StyLink key={`blog-post-${slug}`} to={slug}>
         <Card
-          title={node.frontmatter.title}
+          title={title}
           subtitle=""
-          image={node.frontmatter.image}
+          image={image}
           badge={{ text, color, background }}
         />
       </S.StyLink>

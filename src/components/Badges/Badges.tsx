@@ -23,8 +23,8 @@ const Badges: React.FC<BadgeProps> = props => {
   return (
     <S.Container>
       {slicedTags.map((tag, index) => (
-        <S.Badge background={badgeBackgrounds[index]}>
-          <S.BadgeText txtColor={badgeColors[index]}>{tag}</S.BadgeText>
+        <S.Badge key={`badge-${tag}`} background={badgeBackgrounds[index]}>
+          <S.BadgeText txtcolor={badgeColors[index]}>{tag}</S.BadgeText>
         </S.Badge>
       ))}
       {remainderTags.length > 0 && (
@@ -34,7 +34,9 @@ const Badges: React.FC<BadgeProps> = props => {
               <React.Fragment>
                 <S.MoreTooltipContent>...</S.MoreTooltipContent>
                 {remainderTags.map(t => (
-                  <S.MoreTooltipContent>{t}</S.MoreTooltipContent>
+                  <S.MoreTooltipContent key={`rem-badge-${t}`}>
+                    {t}
+                  </S.MoreTooltipContent>
                 ))}
               </React.Fragment>
             }

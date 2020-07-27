@@ -77,7 +77,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         file
-        date(formatString: "MMMM DD, YYYY")
+        date
         slug
         title
         image

@@ -12,7 +12,8 @@
     "frontmatter",
     "posts",
     "preload",
-    "renderer"
+    "renderer",
+    "txtcolor"
   ],
   "cSpell.language": "en,pt,pt_BR"
 }

@@ -23,7 +23,7 @@ const Card: React.FC<CardProps> = (props: CardProps) => {
       <S.InfoContainer>
         {badge.text && (
           <S.Badge background={badge.background}>
-            <S.BadgeText txtColor={badge.color}>{badge.text}</S.BadgeText>
+            <S.BadgeText txtcolor={badge.color}>{badge.text}</S.BadgeText>
           </S.Badge>
         )}
         <S.Title>{title}</S.Title>
