@@ -6,6 +6,7 @@ import 'moment/locale/pt-br'
 // Components
 import DefaultLayout from '@Component/DefaultLayout'
 import SEO from '@Component/Seo'
+import Badges from '@Component/Badges'
 import * as S from '@PageStyle/BlogTemplateStyles'
 
 // Configs
@@ -49,47 +50,16 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
   const fileUrl = file ? repository + file : ''
   const currentDate = moment(date).locale('pt-br')
 
-  const renderBadges = (): JSX.Element => {
-    if (!tags || !Array.isArray(tags) || tags.length === 0) {
-      return <React.Fragment />
-    }
-
-    const slicedTags = tags.slice(0, 2)
-    const remainderTags = tags.filter(x => !slicedTags.includes(x))
-
-    return (
-      <S.BadgeContainer>
-        {slicedTags.map((tag, index) => (
-          <S.Badge background={badgeBackgrounds[index]}>
-            <S.BadgeText txtColor={badgeColors[index]}>{tag}</S.BadgeText>
-          </S.Badge>
-        ))}
-        {remainderTags.length > 0 && (
-          <S.Badge>
-            <S.BadgeMoreTooltip
-              title={
-                <React.Fragment>
-                  <S.MoreTooltipContent>...</S.MoreTooltipContent>
-                  {remainderTags.map(t => (
-                    <S.MoreTooltipContent>{t}</S.MoreTooltipContent>
-                  ))}
-                </React.Fragment>
-              }
-            >
-              <S.BadgeText>+</S.BadgeText>
-            </S.BadgeMoreTooltip>
-          </S.Badge>
-        )}
-      </S.BadgeContainer>
-    )
-  }
-
   return (
     <DefaultLayout page={fileUrl}>
       <SEO title={title} />
       <S.Container>
         <S.CoverImage src={image} />
-        {renderBadges()}
+        <Badges
+          tags={tags}
+          badgeColors={badgeColors}
+          badgeBackgrounds={badgeBackgrounds}
+        />
         <S.Title>{title}</S.Title>
         <S.PostDate>- {currentDate.format('MMMM DD, YYYY')} -</S.PostDate>
         <div dangerouslySetInnerHTML={{ __html: html }} />
