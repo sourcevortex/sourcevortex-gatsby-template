@@ -61,7 +61,9 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
           badgeBackgrounds={badgeBackgrounds}
         />
         <S.Title>{title}</S.Title>
-        <S.PostDate>- {currentDate.format('MMMM DD, YYYY')} -</S.PostDate>
+        <S.PostDate>
+          - {currentDate.format('MMMM DD, YYYY | HH:mm')} -
+        </S.PostDate>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </S.Container>
       <br />
