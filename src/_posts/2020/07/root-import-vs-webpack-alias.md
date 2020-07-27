@@ -3,18 +3,18 @@ file: '/blob/master/src/_posts/2020/07/root-import-vs-webpack-alias.md'
 image: '2020/07/root_x_alias.png'
 slug: '/blog/2020/07/root-import-vs-webpack-alias'
 date: '2020-07-25 23:20:00'
-title: 'ReactJS - Root import VS Webpack alias'
+title: 'Root import VS Webpack alias'
 tags:
-  - Javascript
   - ReactJS
+  - Javascript
   - Webpack
 badgeColors:
   - 'black'
   - 'black'
   - 'black'
 badgeBackgrounds:
-  - '#f7df1e'
   - '#4cdafe'
+  - '#f7df1e'
   - '#1c78c0'
 ---
 
