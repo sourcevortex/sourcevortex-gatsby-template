@@ -7,12 +7,15 @@ title: 'ReactJS - Root import VS Webpack alias'
 tags:
   - Javascript
   - ReactJS
+  - Webpack
 badgeColors:
+  - 'black'
   - 'black'
   - 'black'
 badgeBackgrounds:
   - '#f7df1e'
   - '#4cdafe'
+  - '#1c78c0'
 ---
 
 ### O que é Root import?
