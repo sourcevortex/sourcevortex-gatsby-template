@@ -43,6 +43,7 @@ Toda aplicação criada com o comando `create-react-app` possui um webpack gerad
 
 Sim, você irá substituir o comando padrão `react-scripts` por `craco`.
 
+- Agora instale a biblioteca com: `npm i react-hot-loader`
 - Crie um arquivo na raíz do projeto chamado `craco.config.js` e preencha-o assim:
 
 ```javascript:title=craco.config.js
@@ -70,6 +71,8 @@ function App() {
 
 export default hot(App)
 ```
+
+**OBS:** Um erro comum que pode acontecer é importar dessa maneira `import { hot } from 'react-hot-loader'`, porém está incorreto e irá causar erro quando for executar a aplicação. Note que a importação correta possui `/root` no final.
 
 Pronto, se tudo ocorreu bem na instalação o React Hot Loader já deve estar funcionando em sua aplicação.
 
