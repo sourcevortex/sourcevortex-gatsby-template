@@ -1,5 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import { useLocation } from '@reach/router'
 
 // Hooks
 import useSiteMetadata from '@Hook/use-site-metadata'
@@ -14,6 +15,8 @@ interface SEOProps {
 const SEO: React.FC<SEOProps> = props => {
   const { description, lang, meta, title } = props
   const site = useSiteMetadata()
+  const { pathname } = useLocation()
+  const siteUrlWithPath = site.siteMetadata.siteUrl + pathname
 
   const metaDescription = description || site.siteMetadata.description
 
@@ -39,7 +42,7 @@ const SEO: React.FC<SEOProps> = props => {
         },
         {
           property: `og:url`,
-          content: site.siteMetadata.siteUrl,
+          content: siteUrlWithPath,
         },
         {
           property: `og:image`,
