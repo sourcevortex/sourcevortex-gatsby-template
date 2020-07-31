@@ -21,8 +21,8 @@ export default {
       start: '',
       end: '',
       localization: '',
-      showDescription: true
-      description: ',
+      showDescription: true,
+      description: '',
     },
   ],
 }

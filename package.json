@@ -1,7 +1,7 @@
 {
-  "name": "chsjr1996.page-src",
+  "name": "sourcevortex-gatsby-template",
   "private": false,
-  "description": "Carlos Henrique's blog and resume powered by Gatsby",
+  "description": "SourceVortex",
   "version": "0.1.0",
   "author": "Carlos H. <chsjr1996@gmail.com>",
   "dependencies": {

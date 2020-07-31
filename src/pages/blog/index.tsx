@@ -17,7 +17,7 @@ const Blog: React.FC = () => {
     allMarkdownRemark: { edges },
   } = useBlogPosts()
 
-  const renderCard = (node: EdgesNode) => {
+  const RenderCard: React.FC<{ node: EdgesNode }> = ({ node }) => {
     const {
       frontmatter: { slug, title, image, tags, badgeColors, badgeBackgrounds },
     } = node
@@ -43,7 +43,8 @@ const Blog: React.FC = () => {
       <SEO title="Blog" />
       <h1>BLOG</h1>
       <S.CardContainer>
-        {edges.map(({ node }) => renderCard(node))}
+        {edges.map(({ node }) => <RenderCard node={node} />)}
+        {!edges.length && <S.NotFoundText>Nenhum post encontrado</S.NotFoundText>}
       </S.CardContainer>
     </DefaultLayout>
   )

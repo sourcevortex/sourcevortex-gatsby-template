@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Source Vortex | Blog & Portfólio`,
-    description: `Blog pessoal sobre tecnologia, programação, distribuições Linux e muito mais!`,
+    title: `SourceVortex Tempplate Blog and Portfolio`,
+    description: `Your site description here`,
     author: `@chsjr1996`,
     image: `/images/generic/source_vortex.png`,
     imageAlt: `SourceVortex site image`,
-    siteUrl: `https://sourcevortex.com.br/`,
+    siteUrl: `https://yourUrl.here.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://sourcevortex.com.br`,
+        siteUrl: `https://yourUrl.here.com`,
         stripQueryString: true,
       },
     },

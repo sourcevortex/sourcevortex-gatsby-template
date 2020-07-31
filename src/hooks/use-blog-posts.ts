@@ -25,7 +25,7 @@ interface BlogPosts {
 const useBlogPosts = (): BlogPosts => {
   return useStaticQuery<BlogPosts>(graphql`
     query {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      allMarkdownRemark(filter: {frontmatter: {hidden: {eq: false}}}, sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
             id

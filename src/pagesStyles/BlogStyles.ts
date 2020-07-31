@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
+import Typography from '@material-ui/core/Typography';
+
 import device from '@Config/devices'
 
 export const CardContainer = styled.div`
@@ -24,3 +26,5 @@ export const StyLink = styled(Link)`
   text-decoration: none;
   color: #111111;
 `
+
+export const NotFoundText = styled(Typography)``;
