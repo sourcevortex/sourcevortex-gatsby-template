@@ -22,6 +22,7 @@ interface BlogTemplateProps {
         slug: string
         title: string
         image: string
+        imageAlt: string;
         tags: string[]
         badgeColors: string[]
         badgeBackgrounds: string[]
@@ -39,6 +40,7 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
           date,
           title,
           image,
+          imageAlt,
           tags,
           badgeColors,
           badgeBackgrounds,
@@ -52,7 +54,7 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
 
   return (
     <DefaultLayout page={fileUrl}>
-      <SEO title={title} />
+      <SEO title={title} image={image} imageAlt={imageAlt} />
       <S.Container>
         <S.CoverImage src={image} />
         <Badges
@@ -83,6 +85,7 @@ export const pageQuery = graphql`
         slug
         title
         image
+        imageAlt
         tags
         badgeColors
         badgeBackgrounds

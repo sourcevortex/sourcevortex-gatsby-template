@@ -6,19 +6,24 @@ import { useLocation } from '@reach/router'
 import useSiteMetadata from '@Hook/use-site-metadata'
 
 interface SEOProps {
+  title: string
   description?: string
   lang?: string
   meta?: any[]
-  title: string
+  image?: string
+  imageAlt?: string;
 }
 
 const SEO: React.FC<SEOProps> = props => {
-  const { description, lang, meta, title } = props
-  const site = useSiteMetadata()
+  const { title, description, lang, meta, image, imageAlt } = props
   const { pathname } = useLocation()
-  const siteUrlWithPath = site.siteMetadata.siteUrl + pathname
+  const { siteMetadata } = useSiteMetadata()
 
-  const metaDescription = description || site.siteMetadata.description
+  const siteUrlWithPath = siteMetadata.siteUrl + pathname
+  const metaDescription = description || siteMetadata.description
+  const siteImg = image
+    ? siteMetadata.siteUrl + `/images/${image}`
+    : siteMetadata.siteUrl + siteMetadata.image;
 
   return (
     <Helmet
@@ -26,7 +31,7 @@ const SEO: React.FC<SEOProps> = props => {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -46,11 +51,19 @@ const SEO: React.FC<SEOProps> = props => {
         },
         {
           property: `og:image`,
-          content: site.siteMetadata.siteUrl + site.siteMetadata.image,
+          content: siteImg,
+        },
+        {
+          property: `og:image:alt`,
+          content: imageAlt ? imageAlt : siteMetadata.imageAlt,
         },
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          propery: `fb:app_id`,
+          content: ``,
         },
         {
           name: `twitter:card`,
@@ -58,7 +71,7 @@ const SEO: React.FC<SEOProps> = props => {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: siteMetadata.author,
         },
         {
           name: `twitter:title`,

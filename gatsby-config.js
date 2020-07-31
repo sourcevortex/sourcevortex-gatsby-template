@@ -4,6 +4,7 @@ module.exports = {
     description: `Blog pessoal sobre tecnologia, programação, distribuições Linux e muito mais!`,
     author: `@chsjr1996`,
     image: `/images/generic/source_vortex.png`,
+    imageAlt: `SourceVortex site image`,
     siteUrl: `https://sourcevortex.com.br/`,
   },
   plugins: [

@@ -1,6 +1,7 @@
 ---
 file: '/blob/master/src/_posts/2020/07/reactjs-hot-reload.md'
 image: '2020/07/hot-reload.png'
+imageAlt: 'React hot reload image'
 slug: '/blog/2020/07/reactjs-hot-reload'
 date: '2020-07-26 23:10:00'
 title: 'ReactJS com Hot Reload'

@@ -1,6 +1,7 @@
 ---
 file: '/blob/master/src/_posts/2020/07/root-import-vs-webpack-alias.md'
 image: '2020/07/root_x_alias.png'
+imageAlt: 'Root import VS Webpack alias image'
 slug: '/blog/2020/07/root-import-vs-webpack-alias'
 date: '2020-07-25 23:20:00'
 title: 'Root import VS Webpack alias'
