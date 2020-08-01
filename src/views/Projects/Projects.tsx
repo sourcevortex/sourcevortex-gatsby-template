@@ -5,12 +5,9 @@ import { Link } from 'gatsby'
 import DefaultLayout from '@Component/DefaultLayout'
 import SEO from '@Component/Seo'
 
-// Config
-import { getPage, PagesSummaryEnum as Pg } from '@Root/config/pagesSummary'
-
 const Docs: React.FC = () => (
-  <DefaultLayout page={getPage(Pg.DOCS_PAGE)}>
-    <SEO title="Docs Page" />
+  <DefaultLayout>
+    <SEO title="Projects Page" />
     <h1>Docs: Em desenvolvimento</h1>
     <Link to="/">Voltar para página principal</Link>
   </DefaultLayout>

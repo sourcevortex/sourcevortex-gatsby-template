@@ -8,7 +8,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 import SearchIcon from '@material-ui/icons/Search'
 
 // Configs
-import device from '@Config/devices'
+import device from '@Config/devices.config'
 
 export const Container = styled(AppBar)`
   display: flex;

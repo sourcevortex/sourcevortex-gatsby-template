@@ -1,0 +1,28 @@
+export default {
+  name: 'Your name here',
+  mailAddress: 'Your mail address here',
+  description: '',
+  socialNetworks: [
+    {
+      name: 'Add your linkedin',
+      url: '',
+      icon: 'fab fa-linkedin-in',
+    },
+    {
+      name: 'And others...',
+      url: '',
+      icon: 'Use font awesome here!',
+    },
+  ],
+  experience: [
+    {
+      position: '',
+      company: '',
+      start: '',
+      end: '',
+      localization: '',
+      showDescription: true,
+      description: '',
+    },
+  ],
+}

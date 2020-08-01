@@ -1,5 +1,4 @@
 import React from 'react'
-import { PageProps, graphql } from 'gatsby'
 
 // Components
 import Icon from '@material-ui/core/Icon'
@@ -7,18 +6,12 @@ import Tooltip from '@material-ui/core/Tooltip'
 import DefaultLayout from '@Component/DefaultLayout'
 import SEO from '@Component/Seo'
 import CustomTimeline, { Content } from '@Component/CustomTimeline'
-import * as S from '@PageStyle/IndexStyles'
+import * as S from './PortfolioStyles'
 
 // Configs
-import Profile from '@Config/profile'
+import Profile from '@Config/profile.config'
 
-type DataProps = {
-  site: {
-    buildTime: string
-  }
-}
-
-const HomePage: React.FC<PageProps<DataProps>> = ({ data, path }) => {
+const Portfolio: React.FC = () => {
   let timelineContents: Content[] = []
 
   Profile.experience.map(exp => {
@@ -55,12 +48,4 @@ const HomePage: React.FC<PageProps<DataProps>> = ({ data, path }) => {
   )
 }
 
-export default HomePage
-
-export const query = graphql`
-  {
-    site {
-      buildTime(formatString: "YYYY-MM-DD hh:mm a z")
-    }
-  }
-`
+export default Portfolio

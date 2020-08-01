@@ -5,7 +5,7 @@ import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 
 // Configs
-import device from '@Config/devices'
+import device from '@Config/devices.config'
 
 export const Container = styled.div`
   width: 100%;

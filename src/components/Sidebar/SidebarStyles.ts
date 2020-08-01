@@ -8,7 +8,7 @@ import MenuBookIcon from '@material-ui/icons/MenuBook'
 import EditIcon from '@material-ui/icons/Edit'
 
 // Configs
-import device from '@Config/devices'
+import device from '@Config/devices.config'
 
 export const SidebarContainer = styled.div`
   display: none;

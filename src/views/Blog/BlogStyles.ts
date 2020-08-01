@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import Typography from '@material-ui/core/Typography';
 
-import device from '@Config/devices'
+import device from '@Config/devices.config'
 
 export const CardContainer = styled.div`
   display: grid;

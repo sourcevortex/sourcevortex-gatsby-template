@@ -20,9 +20,9 @@
       "@Root/*": ["*"],
       "@Config/*": ["config/*"],
       "@Hook/*": ["hooks/*"],
+      "@View/*": ["views/*"],
       "@Page/*": ["pages/*"],
-      "@Component/*": ["components/*"],
-      "@PageStyle/*": ["pagesStyles/*"]
+      "@Component/*": ["components/*"]
     }
   },
   "include": ["src", "src/index.tsx", "wrap-with-provider.tsx"]

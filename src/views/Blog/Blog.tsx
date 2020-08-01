@@ -5,9 +5,7 @@ import { get } from 'lodash'
 import DefaultLayout from '@Component/DefaultLayout'
 import SEO from '@Component/Seo'
 import Card from '@Component/Card'
-
-// Styles
-import * as S from '@PageStyle/BlogStyles'
+import * as S from './BlogStyles'
 
 // Hooks
 import useBlogPosts, { EdgesNode } from '@Hook/use-blog-posts'

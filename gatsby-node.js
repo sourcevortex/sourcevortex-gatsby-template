@@ -7,6 +7,7 @@
 const path = require('path')
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
+  // INI: BlogTemplate Page
   const { createPage } = actions
   const BlogPostTemplate = require.resolve(`./src/templates/BlogTemplate.tsx`)
   const result = await graphql(`
@@ -40,6 +41,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   })
+  // END: BlogTemplate Page
+
+  // INI: Homepage
+  createPage({
+    path: '/',
+    component: require.resolve(`./src/views/Blog/Blog.tsx`),
+    context: {},
+  })
+  // END: Homepage
 }
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
@@ -49,9 +59,9 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         '@Root': path.resolve(__dirname, 'src'),
         '@Config': path.resolve(__dirname, 'src', 'config'),
         '@Hook': path.resolve(__dirname, 'src', 'hooks'),
+        '@View': path.resolve(__dirname, 'src', 'views'),
         '@Page': path.resolve(__dirname, 'src', 'pages'),
         '@Component': path.resolve(__dirname, 'src', 'components'),
-        '@PageStyle': path.resolve(__dirname, 'src', 'pagesStyles'),
       },
     },
   })
