@@ -11,4 +11,8 @@ module.exports = {
     siteUrl,
   },
   homepage: '../src/views/Blog/Blog.tsx',
+  pagesEnabled: {
+    about: false,
+    portfolio: false,
+  },
 }
