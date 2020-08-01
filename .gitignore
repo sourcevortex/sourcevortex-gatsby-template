@@ -68,6 +68,7 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-# Personal data
-src/config/profile.ts
-src/config/pagesSummary.ts
+# Environment data
+gatsby.settings/config.js
+src/config/profile.config.ts
+src/config/template.config.ts

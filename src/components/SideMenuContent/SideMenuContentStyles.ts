@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { Link } from 'gatsby'
+import Icon from '@material-ui/core/Icon'
 
 export const Container = styled.div`
   display: flex;
@@ -15,4 +16,9 @@ export const Container = styled.div`
 export const StyLink = styled(Link)`
   text-decoration: none;
   color: #676767;
+`
+
+export const StyIcon = styled(Icon)`
+  height: 30px !important;
+  width: 30px !important;
 `

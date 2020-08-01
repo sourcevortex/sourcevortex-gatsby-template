@@ -19,7 +19,9 @@ const Header: React.FC<HeaderProps> = props => {
   return (
     <S.Container>
       <S.LeftContainer>
-        <S.StyMenuIcon onClick={() => openSideMenu(true)} />
+        {links.length > 0 && (
+          <S.StyMenuIcon onClick={() => openSideMenu(true)} />
+        )}
         <S.TextLink to="/" className="sv-left-logo">
           <S.BlogLogo>{displayName}</S.BlogLogo>
         </S.TextLink>
@@ -32,7 +34,7 @@ const Header: React.FC<HeaderProps> = props => {
       <S.RightContainer>
         {links.map(link => {
           ;<S.TextLink to={link.href}>
-            <S.HeaderMenuItemText>{link.name}</S.HeaderMenuItemText>
+            <S.HeaderMenuItemText>{link.text}</S.HeaderMenuItemText>
           </S.TextLink>
         })}
         <S.StySearchIcon />
