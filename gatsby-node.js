@@ -5,6 +5,7 @@
  */
 
 const path = require('path')
+const config = require('./gatsby.settings/config')
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   // INI: BlogTemplate Page
@@ -46,7 +47,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // INI: Homepage
   createPage({
     path: '/',
-    component: require.resolve(`./src/views/Blog/Blog.tsx`),
+    component: require.resolve(config.homepage),
     context: {},
   })
   // END: Homepage

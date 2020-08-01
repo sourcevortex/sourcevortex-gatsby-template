@@ -1,12 +1,7 @@
+const config = require('./gatsby.settings/config')
+
 module.exports = {
-  siteMetadata: {
-    title: `SourceVortex Tempplate Blog and Portfolio`,
-    description: `Your site description here`,
-    author: `@chsjr1996`,
-    image: `/images/generic/source_vortex.png`,
-    imageAlt: `SourceVortex site image`,
-    siteUrl: `https://yourUrl.here.com`,
-  },
+  siteMetadata: config.siteMetadata,
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -45,7 +40,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://yourUrl.here.com`,
+        siteUrl: config.siteUrl,
         stripQueryString: true,
       },
     },

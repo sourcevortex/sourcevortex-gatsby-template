@@ -1,0 +1,14 @@
+const siteUrl = 'https://yourUrl.here.com'
+
+module.exports = {
+  siteUrl,
+  siteMetadata: {
+    title: `SourceVortex Template Blog and Portfolio`,
+    description: `Your site description here`,
+    author: `Your name`,
+    image: `/images/generic/source_vortex.png`,
+    imageAlt: `SourceVortex site image`,
+    siteUrl,
+  },
+  homepage: './src/views/Blog/Blog.tsx',
+}
