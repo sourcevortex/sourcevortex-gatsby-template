@@ -5,6 +5,7 @@
  */
 
 // Routing/pages
+const About = require('./gatsby.pages/About')
 const BlogTemplate = require('./gatsby.pages/BlogTemplate')
 const Homepage = require('./gatsby.pages/Homepage')
 const Portfolio = require('./gatsby.pages/Portfolio')
@@ -20,7 +21,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   BlogTemplate(createPage, graphql, reporter)
 
   // Optional pages
-  Portfolio(createPage)
+  About(createPage)
 }
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
