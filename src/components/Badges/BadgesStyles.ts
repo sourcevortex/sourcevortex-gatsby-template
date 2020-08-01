@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import Tooltip from '@material-ui/core/Tooltip'
+
+import Popover from '@material-ui/core/Popover'
 import Typography from '@material-ui/core/Typography'
 
 export const Container = styled.div`
@@ -27,6 +28,14 @@ export const BadgeText = styled(Typography)<{ txtcolor?: string }>`
   color: ${props => props.txtcolor || 'white'};
 `
 
-export const BadgeMoreTooltip = styled(Tooltip)``
+export const BadgeMorePopover = styled(Popover)`
+  .MuiPopover-paper {
+    background-color: #111;
+    margin-top: 10px;
+    padding: 5px 20px;
+  }
+`
 
-export const MoreTooltipContent = styled(Typography)``
+export const BadgeMoreText = styled(Typography)`
+  color: white;
+`
