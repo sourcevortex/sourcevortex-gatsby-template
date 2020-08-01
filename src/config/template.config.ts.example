@@ -9,6 +9,7 @@ interface ThemeConfig {
   }
   blogTemplate: {
     repository: string
+    url: string
   }
 }
 
@@ -19,6 +20,7 @@ const themeConfig: ThemeConfig = {
   },
   blogTemplate: {
     repository: 'your-repository-here',
+    url: '/'
   },
 }
 

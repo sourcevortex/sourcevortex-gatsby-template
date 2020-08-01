@@ -49,7 +49,12 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
       },
     },
   } = props
-  const fileUrl = file ? theme.blogTemplate.repository + file : ''
+
+  const {
+    blogTemplate: { repository, url: blogUrl },
+  } = theme
+
+  const fileUrl = file ? repository + file : ''
   const currentDate = moment(date).locale('pt-br')
 
   return (
@@ -70,7 +75,7 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
       </S.Container>
       <br />
       <hr />
-      <Link to="/blog">Voltar para o blog</Link>
+      <Link to={blogUrl}>Voltar para o blog</Link>
     </DefaultLayout>
   )
 }
