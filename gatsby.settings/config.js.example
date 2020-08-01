@@ -10,5 +10,5 @@ module.exports = {
     imageAlt: `SourceVortex site image`,
     siteUrl,
   },
-  homepage: './src/views/Blog/Blog.tsx',
+  homepage: '../src/views/Blog/Blog.tsx',
 }
