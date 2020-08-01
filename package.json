@@ -1,7 +1,7 @@
 {
   "name": "sourcevortex-gatsby-template",
   "private": false,
-  "description": "SourceVortex",
+  "description": "SourceVortex template",
   "version": "0.1.0",
   "author": "Carlos H. <chsjr1996@gmail.com>",
   "dependencies": {
@@ -53,9 +53,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/chsjr1996/chsjr1996.page-src"
+    "url": "https://github.com/SourceVortex/sourcevortex-gatsby-template"
   },
   "bugs": {
-    "url": "https://github.com/chsjr1996/chsjr1996.page-src/issues"
+    "url": "https://github.com/SourceVortex/sourcevortex-gatsby-template/issues"
   }
 }
