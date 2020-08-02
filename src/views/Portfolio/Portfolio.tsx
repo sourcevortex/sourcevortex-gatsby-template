@@ -3,7 +3,7 @@ import React from 'react'
 // Components
 import Icon from '@material-ui/core/Icon'
 import Tooltip from '@material-ui/core/Tooltip'
-import DefaultLayout from '@Component/DefaultLayout'
+import DefaultLayout from '@Layout/DefaultLayout'
 import SEO from '@Component/Seo'
 import CustomTimeline, { Content } from '@Component/CustomTimeline'
 import * as S from './PortfolioStyles'

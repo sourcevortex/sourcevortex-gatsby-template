@@ -4,7 +4,7 @@ import moment from 'moment'
 import 'moment/locale/pt-br'
 
 // Components
-import DefaultLayout from '@Component/DefaultLayout'
+import BlogLayout from '@Layout/BlogLayout'
 import SEO from '@Component/Seo'
 import Badges from '@Component/Badges'
 import * as S from './BlogTemplateStyles'
@@ -58,7 +58,7 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
   const currentDate = moment(date).locale('pt-br')
 
   return (
-    <DefaultLayout page={fileUrl}>
+    <BlogLayout page={fileUrl}>
       <SEO title={title} image={image} imageAlt={imageAlt} />
       <S.Container>
         <S.CoverImage src={image} />
@@ -76,6 +76,6 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
       <br />
       <hr />
       <Link to={blogUrl}>Voltar para o blog</Link>
-    </DefaultLayout>
+    </BlogLayout>
   )
 }

@@ -20,6 +20,8 @@
       "@Root/*": ["*"],
       "@Config/*": ["config/*"],
       "@Hook/*": ["hooks/*"],
+      "@Style/*": ["styles/*"],
+      "@Layout/*": ["layouts/*"],
       "@View/*": ["views/*"],
       "@Page/*": ["pages/*"],
       "@Component/*": ["components/*"]

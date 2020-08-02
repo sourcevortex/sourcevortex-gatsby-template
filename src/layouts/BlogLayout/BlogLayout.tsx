@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
 
 // Main CSS
-import './layout.css'
-import './prism.css'
+import '@Style/layout.css'
+import '@Style/prism.css'
 
 // Components
 import Header from '@Component/Header'
 import CustomDrawer from '@Component/CustomDrawer'
 import SideMenuContent from '@Component/SideMenuContent'
-// import Sidebar from '@Component/Sidebar'
 import FloatEdit from '@Component/FloatEdit'
-import * as S from './DefaultLayoutStyles'
+import * as S from './BlogLayoutStyles'
 
 interface DefaultLayoutProps {
   children: React.ReactNode
@@ -31,7 +30,6 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = props => {
       <CustomDrawer isOpen={menuIsOpen} handleToggle={handleToggleMenu}>
         <SideMenuContent />
       </CustomDrawer>
-      {/* <Sidebar page={page} /> */}
       <S.Container>
         <main>{children}</main>
         <FloatEdit page={page} />

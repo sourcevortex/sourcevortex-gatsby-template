@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 // Components
-import DefaultLayout from '@Component/DefaultLayout'
+import DefaultLayout from '@Layout/DefaultLayout'
 import SEO from '@Component/Seo'
 import Image from '@Component/Image'
 import * as S from './NotFoundStyles'

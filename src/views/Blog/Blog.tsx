@@ -2,7 +2,7 @@ import React from 'react'
 import { get } from 'lodash'
 
 // Components
-import DefaultLayout from '@Component/DefaultLayout'
+import DefaultLayout from '@Layout/DefaultLayout'
 import SEO from '@Component/Seo'
 import Card from '@Component/Card'
 import * as S from './BlogStyles'
@@ -41,8 +41,12 @@ const Blog: React.FC = () => {
       <SEO title="Blog" />
       <h1>BLOG</h1>
       <S.CardContainer>
-        {edges.map(({ node }) => <RenderCard node={node} />)}
-        {!edges.length && <S.NotFoundText>Nenhum post encontrado</S.NotFoundText>}
+        {edges.map(({ node }) => (
+          <RenderCard node={node} />
+        ))}
+        {!edges.length && (
+          <S.NotFoundText>Nenhum post encontrado</S.NotFoundText>
+        )}
       </S.CardContainer>
     </DefaultLayout>
   )
