@@ -71,7 +71,7 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
         <S.PostDate>
           - {currentDate.format('MMMM DD, YYYY | HH:mm')} -
         </S.PostDate>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <S.PostContainer dangerouslySetInnerHTML={{ __html: html }} />
       </S.Container>
       <br />
       <hr />

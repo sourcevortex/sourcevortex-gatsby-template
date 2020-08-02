@@ -51,3 +51,10 @@ export const PostDate = styled.h2`
   text-align: center;
   border-bottom: 1px solid #111111;
 `
+
+export const PostContainer = styled.div`
+  p {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+`
