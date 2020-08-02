@@ -7,6 +7,7 @@ import 'moment/locale/pt-br'
 import BlogLayout from '@Layout/BlogLayout'
 import SEO from '@Component/Seo'
 import Badges from '@Component/Badges'
+import BackLink from '@Component/BackLink'
 import * as S from './BlogTemplateStyles'
 
 // Configs
@@ -61,21 +62,30 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
     <BlogLayout page={fileUrl}>
       <SEO title={title} image={image} imageAlt={imageAlt} />
       <S.Container>
-        <S.CoverImage src={image} />
-        <Badges
-          tags={tags}
-          badgeColors={badgeColors}
-          badgeBackgrounds={badgeBackgrounds}
-        />
-        <S.Title>{title}</S.Title>
-        <S.PostDate>
-          - {currentDate.format('MMMM DD, YYYY | HH:mm')} -
-        </S.PostDate>
+        <S.CoverContainer>
+          <S.CoverImage src={image} />
+          <S.TitleContainer>
+            <S.Title>{title}</S.Title>
+            <Badges
+              tags={tags}
+              badgeColors={badgeColors}
+              badgeBackgrounds={badgeBackgrounds}
+            />
+          </S.TitleContainer>
+        </S.CoverContainer>
+        <S.PostInfoContainer>
+          <S.PostInfoSubContainer>
+            <S.PostDateIcon />
+            <S.PostDate>
+              {currentDate.format('MMMM DD, YYYY | HH:mm')}
+            </S.PostDate>
+          </S.PostInfoSubContainer>
+        </S.PostInfoContainer>
         <S.PostContainer dangerouslySetInnerHTML={{ __html: html }} />
       </S.Container>
-      <br />
-      <hr />
-      <Link to={blogUrl}>Voltar para o blog</Link>
+      <S.FooterContainer>
+        <BackLink tooltip="Voltar para o blog" url={blogUrl} />
+      </S.FooterContainer>
     </BlogLayout>
   )
 }

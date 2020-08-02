@@ -1,19 +1,66 @@
 import styled from 'styled-components'
+
 import Image from '@Component/Image'
+import QueryBuilderIcon from '@material-ui/icons/QueryBuilder'
 import Tooltip from '@material-ui/core/Tooltip'
 import Typography from '@material-ui/core/Typography'
 
+import devices from '@Config/devices.config'
+
 export const Container = styled.div``
+
+export const CoverContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  @media ${devices.tablet} {
+    height: 450px;
+    background-image: url('/images/generic/default.png');
+    background-size: cover;
+    background-repeat: none;
+    background-attachment: fixed;
+    box-shadow: 0px -5px 10px 0px #444 inset;
+  }
+`
 
 export const CoverImage = styled(Image)`
   width: 100%;
-  border-radius: 0.3em;
-  margin-bottom: 30px;
+  max-width: 670px;
+
+  @media ${devices.tablet} {
+    border-radius: 0.3em 0.3em 0 0;
+  }
+`
+
+export const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 670px;
+  height: 75px;
+
+  @media ${devices.tablet} {
+    flex-direction: row;
+    background-color: #111111aa;
+    border-radius: 0 0 0.3em 0.3em;
+  }
 `
 
 export const Title = styled.h1`
-  margin-bottom: 10px;
+  margin-top: 5px;
+  font-size: 22px;
   text-align: center;
+
+  @media ${devices.tablet} {
+    margin: 0 0 0 15px;
+    color: white;
+    font-size: 28px;
+  }
 `
 
 export const BadgeContainer = styled.div`
@@ -45,16 +92,61 @@ export const BadgeMoreTooltip = styled(Tooltip)``
 
 export const MoreTooltipContent = styled(Typography)``
 
+export const PostInfoContainer = styled.div`
+  max-width: 960px;
+  margin: 30px auto 30px auto;
+  padding: 0 1rem;
+
+  @media ${devices.tablet} {
+    padding: 0 1rem;
+  }
+`
+
+export const PostInfoSubContainer = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+export const PostDateIcon = styled(QueryBuilderIcon).attrs(() => ({
+  htmlColor: 'gray',
+}))``
+
 export const PostDate = styled.h2`
-  padding-bottom: 10px;
-  font-size: 18px;
-  text-align: center;
-  border-bottom: 1px solid #111111;
+  font-size: 14px;
+  margin: 0 0 0 10px;
+  color: gray;
+
+  @media ${devices.tablet} {
+    font-size: 18px;
+  }
 `
 
 export const PostContainer = styled.div`
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
   p {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+
+  @media ${devices.tablet} {
+    padding: 0 1rem;
+  }
+`
+
+export const FooterContainer = styled.div`
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 15px 1rem 0 1rem;
+  border-top: 1px solid black;
+
+  a {
+    text-decoration: none;
+    color: #111;
+  }
+
+  @media ${devices.tablet} {
+    padding: 25px 1rem 0 1rem;
   }
 `

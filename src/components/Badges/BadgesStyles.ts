@@ -6,7 +6,6 @@ import Typography from '@material-ui/core/Typography'
 export const Container = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 1.45rem;
 `
 
 export const Badge = styled.div<{ background?: string }>`
@@ -17,7 +16,6 @@ export const Badge = styled.div<{ background?: string }>`
   background-color: ${props => props.background || '#111'};
   border-radius: 0.3em;
   padding: 3px 10px;
-  box-shadow: 1px 1px 5px 1px #888;
 `
 
 export const BadgeText = styled(Typography)<{ txtcolor?: string }>`

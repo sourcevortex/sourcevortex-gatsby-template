@@ -6,10 +6,10 @@ import device from '@Config/devices.config'
 export const Container = styled.div`
   position: relative;
   margin: 0 auto;
+  padding: 50px 0 18px 0;
   max-width: 960px;
-  padding: 4rem 1.45rem;
 
   @media ${device.tablet} {
-    padding: 4rem 4rem;
+    max-width: 100%;
   }
 `
