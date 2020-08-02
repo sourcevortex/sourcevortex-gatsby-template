@@ -5,6 +5,8 @@ import Fab from '@material-ui/core/Fab'
 
 export const Container = styled.div`
   position: fixed;
+  width: 48px;
+  height: 48px;
   right: 15px;
   bottom: 15px;
   z-index: 2;
