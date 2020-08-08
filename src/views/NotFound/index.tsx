@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 import DefaultLayout from '@Layout/DefaultLayout'
 import SEO from '@Component/Seo'
 import Image from '@Component/Image'
-import * as S from './NotFoundStyles'
+import * as S from '@Style/NotFoundStyles'
 
 const NotFoundPage: React.FC = () => {
   return (

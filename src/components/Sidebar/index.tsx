@@ -2,7 +2,7 @@ import React from 'react'
 
 // Components
 import Tooltip from '@material-ui/core/Tooltip'
-import * as S from './SidebarStyles'
+import * as S from '@Style/SidebarStyles'
 
 const Sidebar: React.FC<{ page: string }> = ({ page }) => {
   return (

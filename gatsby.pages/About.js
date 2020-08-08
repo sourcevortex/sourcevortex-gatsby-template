@@ -4,7 +4,7 @@ module.exports = async function (createPage) {
   if (!config.pagesEnabled.about) return
   createPage({
     path: '/about',
-    component: require.resolve(`../src/views/About/About.tsx`),
+    component: require.resolve(`../src/views/About/index.tsx`),
     context: {},
   })
 }

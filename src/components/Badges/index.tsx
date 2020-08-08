@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Components
-import * as S from './BadgesStyles'
+import * as S from '@Style/BadgesStyles'
 
 // Interfaces
 interface BadgeProps {

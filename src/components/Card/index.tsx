@@ -1,6 +1,6 @@
 import React from 'react'
 
-import * as S from './CardStyles'
+import * as S from '@Style/CardStyles'
 
 interface Badge {
   text: string

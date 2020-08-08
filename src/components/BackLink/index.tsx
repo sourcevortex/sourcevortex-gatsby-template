@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import * as S from './BackLinkStyles'
+import * as S from '@Style/BackLinkStyles'
 
 interface BackLink {
   url: string

@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Components
-import * as S from './HeaderStyles'
+import * as S from '@Style/HeaderStyles'
 
 // Configs
 import themeConfig from '@Config/template.config'

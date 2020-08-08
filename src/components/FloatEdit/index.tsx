@@ -2,7 +2,7 @@ import React from 'react'
 
 // Components
 import EditIcon from '@material-ui/icons/Edit'
-import * as S from './FloatEditStyles'
+import * as S from '@Style/FloatEditStyles'
 
 const FloatEdit: React.FC<{ page: string }> = ({ page }) => {
   if (!page) return <React.Fragment />

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 // Components
-import DefaultLayout from '@Layouts/DefaultLayout'
+import DefaultLayout from '@Layout/DefaultLayout'
 import SEO from '@Component/Seo'
 
 const About: React.FC = () => {

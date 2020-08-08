@@ -8,7 +8,7 @@ import BlogLayout from '@Layout/BlogLayout'
 import SEO from '@Component/Seo'
 import Badges from '@Component/Badges'
 import BackLink from '@Component/BackLink'
-import * as S from './BlogTemplateStyles'
+import * as S from '@Style/BlogTemplateStyles'
 
 // Configs
 import theme from '@Config/template.config'

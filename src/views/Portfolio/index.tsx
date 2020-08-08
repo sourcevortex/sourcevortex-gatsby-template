@@ -6,7 +6,7 @@ import Tooltip from '@material-ui/core/Tooltip'
 import DefaultLayout from '@Layout/DefaultLayout'
 import SEO from '@Component/Seo'
 import CustomTimeline, { Content } from '@Component/CustomTimeline'
-import * as S from './PortfolioStyles'
+import * as S from '@Style/PortfolioStyles'
 
 // Configs
 import Profile from '@Config/profile.config'
