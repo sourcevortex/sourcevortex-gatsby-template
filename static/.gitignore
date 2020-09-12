@@ -1,2 +1,3 @@
-*
+/images/*
+!/images/site-icon.png
 !.gitignore
