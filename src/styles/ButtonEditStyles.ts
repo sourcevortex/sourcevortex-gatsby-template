@@ -4,6 +4,7 @@ import EditIcon from '@material-ui/icons/Edit'
 import Tooltip from '@material-ui/core/Tooltip'
 
 export const Container = styled.div`
+  display: none;
   width: 40px;
   height: 40px;
   background-color: #111;
