@@ -39,10 +39,10 @@ const Blog: React.FC = () => {
   return (
     <DefaultLayout>
       <SEO title="Blog" />
-      <h1>BLOG</h1>
+      <S.Title>BLOG</S.Title>
       <S.CardContainer>
         {edges.map(({ node }) => (
-          <RenderCard node={node} />
+          <RenderCard key={`card-${node.id}`} node={node} />
         ))}
         {!edges.length && (
           <S.NotFoundText>Nenhum post encontrado</S.NotFoundText>

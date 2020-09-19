@@ -10,13 +10,17 @@ import SearchIcon from '@material-ui/icons/Search'
 // Configs
 import device from '@Config/devices.config'
 
-export const Container = styled(AppBar)`
+export const Container = styled(AppBar).attrs(() => ({
+  position: 'relative',
+}))`
   display: flex;
   flex-direction: row !important;
   justify-content: space-between;
   align-items: center;
   height: 50px;
   background-color: #111111 !important;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 1px 1px 15px 1px #555 !important;
 `
 
 export const TextLink = styled(Link)`

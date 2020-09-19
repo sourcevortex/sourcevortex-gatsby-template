@@ -1,7 +1,8 @@
 ---
 hidden: true
-title: 'Example'
 slug: '/blog/example.md'
+title: 'Example'
+excerpt: 'Some post excerpt'
 date: '2020-07-26 23:10:00'
 file: '/blog/example.md'
 image: ''

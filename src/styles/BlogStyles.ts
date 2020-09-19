@@ -1,9 +1,13 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-import Typography from '@material-ui/core/Typography';
+import Typography from '@material-ui/core/Typography'
 
 import device from '@Config/devices.config'
+
+export const Title = styled.h1`
+  text-align: center;
+`
 
 export const CardContainer = styled.div`
   display: grid;
@@ -27,4 +31,4 @@ export const StyLink = styled(Link)`
   color: #111111;
 `
 
-export const NotFoundText = styled(Typography)``;
+export const NotFoundText = styled(Typography)``

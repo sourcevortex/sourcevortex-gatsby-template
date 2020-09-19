@@ -136,10 +136,9 @@ export const PostContainer = styled.div`
 `
 
 export const FooterContainer = styled.div`
-  max-width: 960px;
   margin: 0 auto;
   padding: 15px 1rem 0 1rem;
-  border-top: 1px solid black;
+  border-top: 1px solid #aaa;
 
   a {
     text-decoration: none;
@@ -150,3 +149,12 @@ export const FooterContainer = styled.div`
     padding: 25px 1rem 0 1rem;
   }
 `
+
+export const FooterButtonsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+export const FooterButtonsContainerLeft = styled.div``
+
+export const FooterButtonsContainerRight = styled.div``

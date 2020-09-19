@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
-  @import url('https://use.fontawesome.com/releases/v5.12.0/css/all.css');
-
   html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
@@ -12,6 +10,10 @@ export default createGlobalStyle`
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  html,
+  body {
+    overflow-y: hidden !important;
   }
   article,
   aside,

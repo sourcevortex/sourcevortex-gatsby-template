@@ -141,4 +141,9 @@ export default createGlobalStyle`
     content: 'flow';
     background: #e8bd36;
   }
+  .gatsby-highlight pre[class='language-php']::before {
+    content: 'php';
+    background: #8993c1;
+    color: black;
+  }
 `

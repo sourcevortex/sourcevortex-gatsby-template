@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import moment from 'moment'
 import 'moment/locale/pt-br'
 
@@ -8,6 +7,7 @@ import BlogLayout from '@Layout/BlogLayout'
 import SEO from '@Component/Seo'
 import Badges from '@Component/Badges'
 import BackLink from '@Component/BackLink'
+import ButtonEdit from '@Component/ButtonEdit'
 import * as S from '@Style/BlogTemplateStyles'
 
 // Configs
@@ -22,6 +22,7 @@ export interface BlogTemplateProps {
         date: string
         slug: string
         title: string
+        excerpt: string
         image: string
         imageAlt: string
         tags: string[]
@@ -40,6 +41,7 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
           file,
           date,
           title,
+          excerpt,
           image,
           imageAlt,
           tags,
@@ -59,8 +61,13 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
   const currentDate = moment(date).locale('pt-br')
 
   return (
-    <BlogLayout page={fileUrl}>
-      <SEO title={title} image={image} imageAlt={imageAlt} />
+    <BlogLayout>
+      <SEO
+        title={title}
+        image={image}
+        imageAlt={imageAlt}
+        description={excerpt}
+      />
       <S.Container>
         <S.CoverContainer>
           <S.CoverImage src={image} />
@@ -84,7 +91,14 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
         <S.PostContainer dangerouslySetInnerHTML={{ __html: html }} />
       </S.Container>
       <S.FooterContainer>
-        <BackLink tooltip="Voltar para o blog" url={blogUrl} />
+        <S.FooterButtonsContainer>
+          <S.FooterButtonsContainerLeft>
+            <BackLink tooltip="Voltar para o blog" url={blogUrl} />
+          </S.FooterButtonsContainerLeft>
+          <S.FooterButtonsContainerRight>
+            {fileUrl && <ButtonEdit tooltip="Editar no github" url={fileUrl} />}
+          </S.FooterButtonsContainerRight>
+        </S.FooterButtonsContainer>
       </S.FooterContainer>
     </BlogLayout>
   )

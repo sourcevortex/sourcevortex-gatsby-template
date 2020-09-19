@@ -23,14 +23,16 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = props => {
 
   return (
     <>
-      <GlobalStyles />
-      <Header openSideMenu={handleToggleMenu} />
-      <CustomDrawer isOpen={menuIsOpen} handleToggle={handleToggleMenu}>
-        <SideMenuContent />
-      </CustomDrawer>
-      <S.Container>
-        <main>{children}</main>
-      </S.Container>
+      <S.Frame>
+        <GlobalStyles />
+        <Header openSideMenu={handleToggleMenu} />
+        <CustomDrawer isOpen={menuIsOpen} handleToggle={handleToggleMenu}>
+          <SideMenuContent />
+        </CustomDrawer>
+        <S.Container>
+          <main>{children}</main>
+        </S.Container>
+      </S.Frame>
     </>
   )
 }
