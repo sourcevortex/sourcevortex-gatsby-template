@@ -12,14 +12,15 @@ interface CardProps {
   title: string
   subtitle: string
   image?: string
+  wpImage?: boolean
   badge?: Badge
 }
 
 const Card: React.FC<CardProps> = (props: CardProps) => {
-  const { title, subtitle, image, badge } = props
+  const { title, subtitle, image, wpImage, badge } = props
   return (
     <S.Container>
-      <S.PictureBox src={image} />
+      <S.PictureBox src={image} wordpress={wpImage} />
       <S.InfoContainer>
         {badge.text && (
           <S.Badge background={badge.background}>
@@ -31,6 +32,10 @@ const Card: React.FC<CardProps> = (props: CardProps) => {
       </S.InfoContainer>
     </S.Container>
   )
+}
+
+Card.defaultProps = {
+  wpImage: false,
 }
 
 export default Card

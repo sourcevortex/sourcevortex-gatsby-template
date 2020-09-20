@@ -1,5 +1,11 @@
 import { useStaticQuery, graphql } from 'gatsby'
 
+export interface FeaturedImage {
+  node: {
+    sourceUrl: string
+  }
+}
+
 export interface ClassifierNode {
   nodes: {
     slug: string
@@ -10,11 +16,12 @@ export interface ClassifierNode {
 
 export interface EdgesNode {
   id: string
-  excerpt: string
   slug: string
   link: string
   date: string
   title: string
+  excerpt: string
+  featuredImage: FeaturedImage
   categories: ClassifierNode
   tags: ClassifierNode
 }
@@ -39,6 +46,11 @@ const useBlogPostsWP = (): BlogPosts => {
             date
             title
             excerpt
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            }
             categories {
               nodes {
                 slug

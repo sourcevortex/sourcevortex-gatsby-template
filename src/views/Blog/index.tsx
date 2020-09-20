@@ -16,17 +16,25 @@ const Blog: React.FC = () => {
   } = useBlogPosts()
 
   const RenderCard: React.FC<{ node: EdgesNode }> = ({ node }) => {
-    const { link, title, tags } = node
+    const {
+      link,
+      title,
+      categories,
+      featuredImage: {
+        node: { sourceUrl },
+      },
+    } = node
 
-    const text = get(tags, '[0]', null)
+    const text = get(categories, 'nodes.[0].name', null)
 
     return (
       <S.StyLink key={`blog-post-${link}`} to={link}>
         <Card
+          image={sourceUrl}
+          wpImage
+          badge={{ text, color: null, background: null }}
           title={title}
           subtitle=""
-          // image={image}
-          badge={{ text, color: null, background: null }}
         />
       </S.StyLink>
     )

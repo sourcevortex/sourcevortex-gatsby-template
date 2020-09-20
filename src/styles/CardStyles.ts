@@ -19,7 +19,7 @@ export const Container = styled(Paper).attrs(() => ({
 
 export const PictureBox = styled(Image)`
   width: 100%;
-  height: 120px;
+  height: 160px;
   background-color: #ddd;
   border-bottom: 1px solid black;
   border-radius: 0.3em 0.3em 0 0;

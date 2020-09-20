@@ -1,4 +1,5 @@
 import React from 'react'
+import { get } from 'lodash'
 import moment from 'moment'
 import 'moment/locale/pt-br'
 import { DomElement } from 'htmlparser2'
@@ -13,39 +14,24 @@ import BackLink from '@Component/BackLink'
 import ButtonEdit from '@Component/ButtonEdit'
 import * as S from '@Style/BlogTemplateStyles'
 
+// Interfaces
+import { BlogTemplateProps } from '@Root/templates/BlogTemplate'
+
 // Configs
 import theme from '@Config/template.config'
-
-export interface ClassifierNode {
-  nodes: {
-    slug: string
-    name: string
-    link: string
-  }[]
-}
-
-export interface BlogTemplateProps {
-  data: {
-    wpPost: {
-      title: string
-      excerpt: string
-      content: string
-      date: string
-      categories: ClassifierNode
-    }
-  }
-}
 
 export default function Template(props: BlogTemplateProps): JSX.Element {
   const {
     data: {
-      wpPost: { title, excerpt, content, date, categories },
+      wpPost: { title, excerpt, content, date, featuredImage, categories },
     },
   } = props
 
   const {
     blogTemplate: { url: blogUrl },
   } = theme
+
+  const postImage = get(featuredImage, 'node.sourceUrl', '')
 
   // const fileUrl = file ? repository + file : ''
   const currentDate = moment(date).locale('pt-br')
@@ -84,13 +70,13 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
     <BlogLayout>
       <SEO
         title={title}
-        // image={image}
+        // image={featuredImage.node.sourceUrl}
         // imageAlt={imageAlt}
         description={excerpt}
       />
       <S.Container>
         <S.CoverContainer>
-          {/* <S.CoverImage src={image} /> */}
+          <S.CoverImage src={postImage} wordpress />
           <S.TitleContainer>
             <S.Title>{title}</S.Title>
             <Badges
