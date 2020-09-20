@@ -1,11 +1,14 @@
 import React from 'react'
 import moment from 'moment'
 import 'moment/locale/pt-br'
+import { DomElement } from 'htmlparser2'
+import parse, { domToReact } from 'html-react-parser'
 
 // Components
 import BlogLayout from '@Layout/BlogLayout'
 import SEO from '@Component/Seo'
 import Badges from '@Component/Badges'
+import PostCode from '@Component/PostCode'
 import BackLink from '@Component/BackLink'
 import ButtonEdit from '@Component/ButtonEdit'
 import * as S from '@Style/BlogTemplateStyles'
@@ -13,22 +16,22 @@ import * as S from '@Style/BlogTemplateStyles'
 // Configs
 import theme from '@Config/template.config'
 
+export interface ClassifierNode {
+  nodes: {
+    slug: string
+    name: string
+    link: string
+  }[]
+}
+
 export interface BlogTemplateProps {
   data: {
-    markdownRemark: {
-      html: string
-      frontmatter: {
-        file: string
-        date: string
-        slug: string
-        title: string
-        excerpt: string
-        image: string
-        imageAlt: string
-        tags: string[]
-        badgeColors: string[]
-        badgeBackgrounds: string[]
-      }
+    wpPost: {
+      title: string
+      excerpt: string
+      content: string
+      date: string
+      categories: ClassifierNode
     }
   }
 }
@@ -36,47 +39,64 @@ export interface BlogTemplateProps {
 export default function Template(props: BlogTemplateProps): JSX.Element {
   const {
     data: {
-      markdownRemark: {
-        frontmatter: {
-          file,
-          date,
-          title,
-          excerpt,
-          image,
-          imageAlt,
-          tags,
-          badgeColors,
-          badgeBackgrounds,
-        },
-        html,
-      },
+      wpPost: { title, excerpt, content, date, categories },
     },
   } = props
 
   const {
-    blogTemplate: { repository, url: blogUrl },
+    blogTemplate: { url: blogUrl },
   } = theme
 
-  const fileUrl = file ? repository + file : ''
+  // const fileUrl = file ? repository + file : ''
   const currentDate = moment(date).locale('pt-br')
+
+  const getLanguage = (node: DomElement) => {
+    const { attribs } = node
+    const className = attribs.class
+    if (className != null) {
+      const language = className.match(/language-.*/)
+      return (language && language[0].replace('language-', '')) ?? className
+    }
+    return null
+  }
+
+  const getCode = (node: DomElement) => {
+    if (node.children.length > 0 && node.children[0].name === 'code') {
+      return node.children[0].children
+    } else {
+      return node.children
+    }
+  }
+
+  const replaceCode = (node: DomElement) => {
+    if (node.name === 'pre') {
+      return (
+        node.children.length > 0 && (
+          <PostCode language={getLanguage(node)}>
+            {domToReact(getCode(node))}
+          </PostCode>
+        )
+      )
+    }
+  }
 
   return (
     <BlogLayout>
       <SEO
         title={title}
-        image={image}
-        imageAlt={imageAlt}
+        // image={image}
+        // imageAlt={imageAlt}
         description={excerpt}
       />
       <S.Container>
         <S.CoverContainer>
-          <S.CoverImage src={image} />
+          {/* <S.CoverImage src={image} /> */}
           <S.TitleContainer>
             <S.Title>{title}</S.Title>
             <Badges
-              tags={tags}
-              badgeColors={badgeColors}
-              badgeBackgrounds={badgeBackgrounds}
+              tags={categories.nodes.map(v => v.name)}
+              // badgeColors={badgeColors}
+              // badgeBackgrounds={badgeBackgrounds}
             />
           </S.TitleContainer>
         </S.CoverContainer>
@@ -88,16 +108,18 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
             </S.PostDate>
           </S.PostInfoSubContainer>
         </S.PostInfoContainer>
-        <S.PostContainer dangerouslySetInnerHTML={{ __html: html }} />
+        <S.PostContainer>
+          {parse(content, { replace: replaceCode })}
+        </S.PostContainer>
       </S.Container>
       <S.FooterContainer>
         <S.FooterButtonsContainer>
           <S.FooterButtonsContainerLeft>
             <BackLink tooltip="Voltar para o blog" url={blogUrl} />
           </S.FooterButtonsContainerLeft>
-          <S.FooterButtonsContainerRight>
+          {/* <S.FooterButtonsContainerRight>
             {fileUrl && <ButtonEdit tooltip="Editar no github" url={fileUrl} />}
-          </S.FooterButtonsContainerRight>
+          </S.FooterButtonsContainerRight> */}
         </S.FooterButtonsContainer>
       </S.FooterContainer>
     </BlogLayout>

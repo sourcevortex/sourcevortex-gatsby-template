@@ -1,36 +1,37 @@
 module.exports = async function (createPage, graphql, reporter) {
   const BlogPostTemplate = require.resolve(`../src/templates/BlogTemplate.tsx`)
-  const result = await graphql(`
-    {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
+  const {
+    data: {
+      allWpContentNode: { nodes: contentNodes },
+    },
+  } = await graphql(/* GraphQL */ `
+    query ALL_CONTENT_NODES {
+      allWpContentNode(
+        sort: { fields: modifiedGmt, order: DESC }
+        filter: { nodeType: { ne: "MediaItem" } }
       ) {
-        edges {
-          node {
-            frontmatter {
-              slug
-            }
-          }
+        nodes {
+          nodeType
+          uri
+          id
         }
       }
     }
   `)
 
-  // Handle errors
-  if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
-    return
-  }
+  await Promise.all(
+    contentNodes.map(async (node, i) => {
+      const { uri, id } = node
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    createPage({
-      path: node.frontmatter.slug,
-      component: BlogPostTemplate,
-      context: {
-        // additional data can be passed via context
-        slug: node.frontmatter.slug,
-      },
+      console.log(`debug:here:`, uri)
+
+      await createPage({
+        component: BlogPostTemplate,
+        path: uri,
+        context: {
+          id,
+        },
+      })
     })
-  })
+  )
 }

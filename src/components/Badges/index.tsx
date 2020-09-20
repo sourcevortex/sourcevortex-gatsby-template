@@ -1,4 +1,5 @@
 import React from 'react'
+import { get } from 'lodash'
 
 // Components
 import * as S from '@Style/BadgesStyles'
@@ -35,8 +36,13 @@ const Badges: React.FC<BadgeProps> = props => {
   return (
     <S.Container>
       {slicedTags.map((tag, index) => (
-        <S.Badge key={`badge-${tag}`} background={badgeBackgrounds[index]}>
-          <S.BadgeText txtcolor={badgeColors[index]}>{tag}</S.BadgeText>
+        <S.Badge
+          key={`badge-${tag}`}
+          background={get(badgeBackgrounds, index, 'black')}
+        >
+          <S.BadgeText txtcolor={get(badgeColors, index, 'white')}>
+            {tag}
+          </S.BadgeText>
         </S.Badge>
       ))}
       {remainderTags.length > 0 && (

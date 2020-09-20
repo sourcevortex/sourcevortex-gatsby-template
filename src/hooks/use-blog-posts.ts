@@ -1,43 +1,57 @@
 import { useStaticQuery, graphql } from 'gatsby'
 
+export interface ClassifierNode {
+  nodes: {
+    slug: string
+    name: string
+    link: string
+  }[]
+}
+
 export interface EdgesNode {
   id: string
   excerpt: string
-  frontmatter: {
-    date: string
-    slug: string
-    title: string
-    image: string
-    tags: string[]
-    badgeColors: string[]
-    badgeBackgrounds: string[]
-  }
+  slug: string
+  link: string
+  date: string
+  title: string
+  categories: ClassifierNode
+  tags: ClassifierNode
 }
 
 interface BlogPosts {
-  allMarkdownRemark: {
+  allWpPost: {
     edges: {
       node: EdgesNode
     }[]
   }
 }
 
-const useBlogPosts = (): BlogPosts => {
+const useBlogPostsWP = (): BlogPosts => {
   return useStaticQuery<BlogPosts>(graphql`
     query {
-      allMarkdownRemark(filter: {frontmatter: {hidden: {eq: false}}}, sort: { order: DESC, fields: [frontmatter___date] }) {
+      allWpPost(sort: { fields: date, order: DESC }) {
         edges {
           node {
             id
-            excerpt(pruneLength: 250)
-            frontmatter {
-              date(formatString: "MMMM DD, YYYY")
-              slug
-              title
-              image
-              tags
-              badgeColors
-              badgeBackgrounds
+            slug
+            link
+            date
+            title
+            excerpt
+            categories {
+              nodes {
+                slug
+                name
+                link
+              }
+            }
+            tags {
+              nodes {
+                slug
+                name
+                link
+              }
             }
           }
         }
@@ -46,4 +60,4 @@ const useBlogPosts = (): BlogPosts => {
   `)
 }
 
-export default useBlogPosts
+export default useBlogPostsWP

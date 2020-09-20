@@ -12,25 +12,21 @@ import useBlogPosts, { EdgesNode } from '@Hook/use-blog-posts'
 
 const Blog: React.FC = () => {
   const {
-    allMarkdownRemark: { edges },
+    allWpPost: { edges },
   } = useBlogPosts()
 
   const RenderCard: React.FC<{ node: EdgesNode }> = ({ node }) => {
-    const {
-      frontmatter: { slug, title, image, tags, badgeColors, badgeBackgrounds },
-    } = node
+    const { link, title, tags } = node
 
     const text = get(tags, '[0]', null)
-    const color = get(badgeColors, '[0]', null)
-    const background = get(badgeBackgrounds, '[0]', null)
 
     return (
-      <S.StyLink key={`blog-post-${slug}`} to={slug}>
+      <S.StyLink key={`blog-post-${link}`} to={link}>
         <Card
           title={title}
           subtitle=""
-          image={image}
-          badge={{ text, color, background }}
+          // image={image}
+          badge={{ text, color: null, background: null }}
         />
       </S.StyLink>
     )
