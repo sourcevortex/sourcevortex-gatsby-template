@@ -37,27 +37,6 @@ const plugins = [
       },
     },
   },
-  // {
-  //   resolve: `gatsby-transformer-remark`,
-  //   options: {
-  //     plugins: [
-  //       {
-  //         resolve: 'gatsby-remark-code-titles',
-  //         options: {
-  //           className: 'md-code-title',
-  //         },
-  //       },
-  //       {
-  //         resolve: `gatsby-remark-autolink-headers`,
-  //         options: {},
-  //       },
-  //       {
-  //         resolve: `gatsby-remark-prismjs`,
-  //         options: {},
-  //       },
-  //     ],
-  //   },
-  // },
   `gatsby-transformer-sharp`,
   `gatsby-plugin-sharp`,
   {

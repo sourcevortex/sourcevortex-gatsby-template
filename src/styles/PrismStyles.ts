@@ -146,4 +146,9 @@ export default createGlobalStyle`
     background: #8993c1;
     color: black;
   }
+  .gatsby-highlight pre[class='language-python']::before {
+    content: 'php';
+    background: #8993c1;
+    color: black;
+  }
 `
