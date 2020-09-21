@@ -2,16 +2,14 @@ module.exports = async function (createPage, graphql, reporter) {
   const BlogPostTemplate = require.resolve(`../src/templates/BlogTemplate.tsx`)
   const {
     data: {
-      allWpContentNode: { nodes: contentNodes },
+      allWpPost: { nodes: contentNodes },
     },
   } = await graphql(/* GraphQL */ `
     query ALL_CONTENT_NODES {
-      allWpContentNode(
-        sort: { fields: modifiedGmt, order: DESC }
-        filter: { nodeType: { ne: "MediaItem" } }
+      allWpPost(
+        sort: { fields: dateGmt, order: DESC }
       ) {
         nodes {
-          nodeType
           uri
           id
         }

@@ -72,6 +72,5 @@ yarn-error.log
 .yarn-integrity
 
 # Environment data
-gatsby.settings/config.js
 src/config/profile.config.ts
 src/config/template.config.ts
