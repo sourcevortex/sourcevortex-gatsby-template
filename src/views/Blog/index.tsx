@@ -22,7 +22,7 @@ const Blog: React.FC = () => {
     const text = get(categories, 'nodes.[0].name', null)
 
     return (
-      <S.StyLink key={`blog-post-${link}`} to={link}>
+      <S.StyLink key={`blog-post-${link}`} to={`/blog${link}`}>
         <Card
           image={postImage}
           wpImage

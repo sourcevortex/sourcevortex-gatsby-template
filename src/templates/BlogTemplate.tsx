@@ -5,6 +5,10 @@ import Template from '@View/BlogTemplate'
 export interface FeaturedImage {
   node: {
     sourceUrl: string
+    altText: string
+    localFile: {
+      publicURL: string
+    }
   }
 }
 
@@ -45,6 +49,10 @@ export const pageQuery = graphql`
       featuredImage {
         node {
           sourceUrl
+          altText
+          localFile {
+            publicURL
+          }
         }
       }
       categories {

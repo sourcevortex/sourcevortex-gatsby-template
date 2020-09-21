@@ -23,7 +23,7 @@ module.exports = async function (createPage, graphql, reporter) {
 
       await createPage({
         component: BlogPostTemplate,
-        path: uri,
+        path: `/blog${uri}`,
         context: {
           id,
         },

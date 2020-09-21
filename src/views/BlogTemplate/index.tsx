@@ -32,6 +32,8 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
   } = theme
 
   const postImage = get(featuredImage, 'node.sourceUrl', '')
+  const metaImage = get(featuredImage, 'node.localFile.publicURL', '')
+  const metaImageAlt = get(featuredImage, 'node.altText', '')
 
   // const fileUrl = file ? repository + file : ''
   const currentDate = moment(date).locale('pt-br')
@@ -70,8 +72,8 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
     <BlogLayout>
       <SEO
         title={title}
-        // image={featuredImage.node.sourceUrl}
-        // imageAlt={imageAlt}
+        image={metaImage}
+        imageAlt={metaImageAlt}
         description={excerpt}
       />
       <S.Container>
@@ -79,11 +81,7 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
           <S.CoverImage src={postImage} wordpress />
           <S.TitleContainer>
             <S.Title>{title}</S.Title>
-            <Badges
-              tags={categories.nodes.map(v => v.name)}
-              // badgeColors={badgeColors}
-              // badgeBackgrounds={badgeBackgrounds}
-            />
+            <Badges tags={categories.nodes.map(v => v.name)} />
           </S.TitleContainer>
         </S.CoverContainer>
         <S.PostInfoContainer>

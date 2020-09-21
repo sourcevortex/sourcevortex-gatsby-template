@@ -11,7 +11,7 @@ interface SEOProps {
   lang?: string
   meta?: any[]
   image?: string
-  imageAlt?: string;
+  imageAlt?: string
 }
 
 const SEO: React.FC<SEOProps> = props => {
@@ -22,8 +22,8 @@ const SEO: React.FC<SEOProps> = props => {
   const siteUrlWithPath = siteMetadata.siteUrl + pathname
   const metaDescription = description || siteMetadata.description
   const siteImg = image
-    ? siteMetadata.siteUrl + `/images/${image}`
-    : siteMetadata.siteUrl + siteMetadata.image;
+    ? siteMetadata.siteUrl + image
+    : siteMetadata.siteUrl + siteMetadata.image
 
   return (
     <Helmet
