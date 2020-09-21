@@ -93,7 +93,7 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
           </S.PostInfoSubContainer>
         </S.PostInfoContainer>
         <S.PostContainer>
-          {parse(content, { replace: replaceCode })}
+          {content && parse(content, { replace: replaceCode })}
         </S.PostContainer>
       </S.Container>
       <S.FooterContainer>
