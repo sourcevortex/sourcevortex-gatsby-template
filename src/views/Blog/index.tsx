@@ -24,8 +24,10 @@ const Blog: React.FC = () => {
     const postImage = get(featuredImage, 'node.sourceUrl', '')
     const categoryName = get(categories, 'nodes.[0].name', null)
     const categorySlug = get(categories, 'nodes.[0].slug', null)
-    const background = getCategoryColors('background', null, categorySlug)
-    const color = getCategoryColors('color', null, categorySlug)
+
+    // prettier-ignore
+    const background = getCategoryColors('background', null, categorySlug) as string
+    const color = getCategoryColors('color', null, categorySlug) as string
 
     return (
       <S.StyLink key={`blog-post-${link}`} to={`/blog${link}`}>
