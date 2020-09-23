@@ -24,7 +24,8 @@
       "@Layout/*": ["layouts/*"],
       "@View/*": ["views/*"],
       "@Page/*": ["pages/*"],
-      "@Component/*": ["components/*"]
+      "@Component/*": ["components/*"],
+      "@Util/*": ["utils/*"]
     }
   },
   "include": ["src", "src/index.tsx", "wrap-with-provider.tsx"]

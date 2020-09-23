@@ -1,0 +1,27 @@
+{
+  "laravel": {
+    "background": "#f72c1f",
+    "color": "white"
+  },
+  "expressjs": {
+    "background": "#f3df1d",
+    "color": "black"
+  },
+  "javascript": {
+    "background": "#f3df1d",
+    "color": "black"
+  },
+  "electronjs": {
+    "background": "#9feaf9",
+    "color": "black"
+  },
+  "php": {
+    "background": "#858ebb"
+  },
+  "nodejs": {
+    "background": "#8cbf3d"
+  },
+  "reactjs": {
+    "background": "#5ed3f3"
+  }
+}

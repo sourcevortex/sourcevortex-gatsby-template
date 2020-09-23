@@ -5,13 +5,17 @@ import 'moment/locale/pt-br'
 import { DomElement } from 'htmlparser2'
 import parse, { domToReact } from 'html-react-parser'
 
+// Utils
+import getCategoryColors from '@Util/getCategoryColors'
+import { getLanguage, getCode } from '@Util/parseCodeBlock'
+
 // Components
 import BlogLayout from '@Layout/BlogLayout'
 import SEO from '@Component/Seo'
 import Badges from '@Component/Badges'
 import PostCode from '@Component/PostCode'
 import BackLink from '@Component/BackLink'
-import ButtonEdit from '@Component/ButtonEdit'
+// import ButtonEdit from '@Component/ButtonEdit'
 import * as S from '@Style/BlogTemplateStyles'
 
 // Interfaces
@@ -35,26 +39,13 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
   const metaImage = get(featuredImage, 'node.localFile.publicURL', '')
   const metaImageAlt = get(featuredImage, 'node.altText', '')
 
+  const tags = categories.nodes.map(v => v.name)
+  // prettier-ignore
+  const badgeBackgrounds = getCategoryColors('background', categories) as string[]
+  const badgeColors = getCategoryColors('color', categories) as string[]
+
   // const fileUrl = file ? repository + file : ''
   const currentDate = moment(date).locale('pt-br')
-
-  const getLanguage = (node: DomElement) => {
-    const { attribs } = node
-    const className = attribs.class
-    if (className != null) {
-      const language = className.match(/language-.*/)
-      return (language && language[0].replace('language-', '')) ?? className
-    }
-    return null
-  }
-
-  const getCode = (node: DomElement) => {
-    if (node.children.length > 0 && node.children[0].name === 'code') {
-      return node.children[0].children
-    } else {
-      return node.children
-    }
-  }
 
   const replaceCode = (node: DomElement) => {
     if (node.name === 'pre') {
@@ -81,7 +72,11 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
           <S.CoverImage src={postImage} wordpress />
           <S.TitleContainer>
             <S.Title>{title}</S.Title>
-            <Badges tags={categories.nodes.map(v => v.name)} />
+            <Badges
+              tags={categories.nodes.map(v => v.name)}
+              badgeBackgrounds={badgeBackgrounds}
+              badgeColors={badgeColors}
+            />
           </S.TitleContainer>
         </S.CoverContainer>
         <S.PostInfoContainer>

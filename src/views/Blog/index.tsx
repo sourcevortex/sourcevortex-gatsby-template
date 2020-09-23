@@ -1,6 +1,9 @@
 import React from 'react'
 import { get } from 'lodash'
 
+// Utils
+import getCategoryColors from '@Util/getCategoryColors'
+
 // Components
 import DefaultLayout from '@Layout/DefaultLayout'
 import SEO from '@Component/Seo'
@@ -19,14 +22,21 @@ const Blog: React.FC = () => {
     const { link, title, categories, featuredImage } = node
 
     const postImage = get(featuredImage, 'node.sourceUrl', '')
-    const text = get(categories, 'nodes.[0].name', null)
+    const categoryName = get(categories, 'nodes.[0].name', null)
+    const categorySlug = get(categories, 'nodes.[0].slug', null)
+    const background = getCategoryColors('background', null, categorySlug)
+    const color = getCategoryColors('color', null, categorySlug)
 
     return (
       <S.StyLink key={`blog-post-${link}`} to={`/blog${link}`}>
         <Card
           image={postImage}
           wpImage
-          badge={{ text, color: null, background: null }}
+          badge={{
+            text: categoryName,
+            background,
+            color,
+          }}
           title={title}
           subtitle=""
         />

@@ -12,6 +12,7 @@ module.exports = function (actions) {
         '@View': path.resolve(__dirname, '..', 'src', 'views'),
         '@Page': path.resolve(__dirname, '..', 'src', 'pages'),
         '@Component': path.resolve(__dirname, '..', 'src', 'components'),
+        '@Util': path.resolve(__dirname, '..', 'src', 'utils'),
       },
     },
   })
