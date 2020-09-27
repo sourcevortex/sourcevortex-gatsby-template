@@ -5,6 +5,12 @@ export interface AllWpMediaData {
     edges: {
       node: {
         sourceUrl: string
+        localFile: {
+          publicURL: string
+          childImageSharp: {
+            fluid: any
+          }
+        }
       }
     }[]
   }
@@ -18,6 +24,7 @@ const useAllWpMedia = (): AllWpMediaData => {
           node {
             sourceUrl
             localFile {
+              publicURL
               childImageSharp {
                 fluid(maxWidth: 1000) {
                   ...GatsbyImageSharpFluid_noBase64

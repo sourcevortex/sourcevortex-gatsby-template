@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 // Main CSS
 import GlobalStyles from '@Style/_GlobalStyles'
+import BlogGlobalStyles from '@Style/BlogGlobalStyles'
 import PrismStyles from '@Style/PrismStyles'
 
 // Components
@@ -26,6 +27,7 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = props => {
     <>
       <S.Frame>
         <GlobalStyles />
+        <BlogGlobalStyles />
         <PrismStyles />
         <Header openSideMenu={handleToggleMenu} />
         <CustomDrawer isOpen={menuIsOpen} handleToggle={handleToggleMenu}>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Template from '@View/BlogTemplate'
+import Template from '@View/BlogContent'
 
 export interface FeaturedImage {
   node: {

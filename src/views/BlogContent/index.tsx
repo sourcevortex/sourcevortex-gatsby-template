@@ -2,20 +2,18 @@ import React from 'react'
 import { get } from 'lodash'
 import moment from 'moment'
 import 'moment/locale/pt-br'
-import { DomElement } from 'htmlparser2'
-import parse, { domToReact } from 'html-react-parser'
+import parse from 'html-react-parser'
 
 // Utils
 import getCategoryColors from '@Util/getCategoryColors'
-import { getLanguage, getCode } from '@Util/parseCodeBlock'
 
 // Components
 import BlogLayout from '@Layout/BlogLayout'
 import SEO from '@Component/Seo'
 import Badges from '@Component/Badges'
-import PostCode from '@Component/PostCode'
 import BackLink from '@Component/BackLink'
 // import ButtonEdit from '@Component/ButtonEdit'
+import ReplacePieces from './ReplacePieces'
 import * as S from '@Style/BlogTemplateStyles'
 
 // Interfaces
@@ -47,18 +45,6 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
   // const fileUrl = file ? repository + file : ''
   const currentDate = moment(date).locale('pt-br')
 
-  const replaceCode = (node: DomElement) => {
-    if (node.name === 'pre') {
-      return (
-        node.children.length > 0 && (
-          <PostCode language={getLanguage(node)}>
-            {domToReact(getCode(node))}
-          </PostCode>
-        )
-      )
-    }
-  }
-
   return (
     <BlogLayout>
       <SEO
@@ -73,7 +59,7 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
           <S.TitleContainer>
             <S.Title>{title}</S.Title>
             <Badges
-              tags={categories.nodes.map(v => v.name)}
+              tags={tags}
               badgeBackgrounds={badgeBackgrounds}
               badgeColors={badgeColors}
             />
@@ -88,7 +74,7 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
           </S.PostInfoSubContainer>
         </S.PostInfoContainer>
         <S.PostContainer>
-          {content && parse(content, { replace: replaceCode })}
+          {content && parse(content, { replace: ReplacePieces })}
         </S.PostContainer>
       </S.Container>
       <S.FooterContainer>

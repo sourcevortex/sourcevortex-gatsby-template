@@ -136,6 +136,7 @@ export const PostContainer = styled.div`
 `
 
 export const FooterContainer = styled.div`
+  height: 70px;
   margin: 0 auto;
   padding: 15px 1rem 0 1rem;
   border-top: 1px solid #aaa;
@@ -146,6 +147,7 @@ export const FooterContainer = styled.div`
   }
 
   @media ${devices.tablet} {
+    height: 90px;
     padding: 25px 1rem 0 1rem;
   }
 `
