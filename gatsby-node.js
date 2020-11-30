@@ -11,19 +11,19 @@ const Homepage = require('./gatsby.pages/Homepage')
 const Portfolio = require('./gatsby.pages/Portfolio')
 
 // Webpack configs
-const webpackAlises = require('./gatsby.settings/webpack.aliases')
+const webpackAliases = require('./gatsby.settings/webpack.aliases')
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
   // Main pages
-  Homepage(createPage)
-  BlogTemplate(createPage, graphql, reporter)
+  await Homepage(createPage)
+  await BlogTemplate(createPage, graphql, reporter)
 
   // Optional pages
-  About(createPage)
+  await About(createPage)
 }
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
-  webpackAlises(actions)
+  webpackAliases(actions)
 }

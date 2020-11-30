@@ -21,7 +21,7 @@ module.exports = async function (createPage, graphql, reporter) {
     contentNodes.map(async (node, i) => {
       const { uri, id } = node
 
-      await createPage({
+      return await createPage({
         component: BlogPostTemplate,
         path: `/blog${uri}`,
         context: {
