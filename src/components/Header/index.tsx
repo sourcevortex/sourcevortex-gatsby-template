@@ -32,11 +32,11 @@ const Header: React.FC<HeaderProps> = props => {
         </S.TextLink>
       </S.CenterContainer>
       <S.RightContainer>
-        {links.map(link => {
-          ;<S.TextLink to={link.href}>
+        {links.map(link => (
+          <S.TextLink to={link.href}>
             <S.HeaderMenuItemText>{link.text}</S.HeaderMenuItemText>
           </S.TextLink>
-        })}
+        ))}
         <S.StySearchIcon />
       </S.RightContainer>
     </S.Container>

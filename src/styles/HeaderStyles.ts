@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 // Components
+import Image from '@Component/Image'
 import { Link } from 'gatsby'
 import AppBar from '@material-ui/core/AppBar'
 import Typography from '@material-ui/core/Typography'
@@ -22,6 +23,11 @@ export const Container = styled(AppBar).attrs(() => ({
   border-radius: 5px 5px 0 0;
   box-shadow: 1px 1px 15px 1px #555 !important;
 `
+
+export const StyImage = styled(Image)`
+  width: 30px;
+  height: 30px;
+`; 
 
 export const TextLink = styled(Link)`
   color: white;

@@ -69,7 +69,7 @@ export default function Template(props: BlogTemplateProps): JSX.Element {
           <S.PostInfoSubContainer>
             <S.PostDateIcon />
             <S.PostDate>
-              {currentDate.format('MMMM DD, YYYY | HH:mm')}
+              {currentDate.format('MMMM DD, YYYY')}
             </S.PostDate>
           </S.PostInfoSubContainer>
         </S.PostInfoContainer>

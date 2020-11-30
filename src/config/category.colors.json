@@ -23,5 +23,11 @@
   },
   "reactjs": {
     "background": "#5ed3f3"
+  },
+  "browser": {
+    "background": "#015593"
+  },
+  "firefox": {
+    "background": "#f66a25"
   }
 }
