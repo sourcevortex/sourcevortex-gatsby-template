@@ -74,3 +74,7 @@ yarn-error.log
 # Environment data
 src/config/profile.config.ts
 src/config/template.config.ts
+
+# Editors
+.vscode
+.idea

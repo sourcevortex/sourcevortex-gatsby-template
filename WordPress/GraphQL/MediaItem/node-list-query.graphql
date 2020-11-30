@@ -1,5 +1,5 @@
 query NODE_LIST_QUERY($first: Int!, $after: String) {
-  mediaItems(first: $first, after: $after, where: { parent: null }) {
+  mediaItems(first: $first, after: $after) {
     nodes {
       altText
       ancestors(first: 100) {
@@ -96,15 +96,8 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       srcSet
       status
       template {
-        templateFile
         templateName
         __typename
-      }
-      terms(first: 100) {
-        nodes {
-          id
-          __typename
-        }
       }
       title
       uri

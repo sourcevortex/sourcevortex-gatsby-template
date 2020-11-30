@@ -1,5 +1,5 @@
 query NODE_LIST_QUERY($first: Int!, $after: String) {
-  pages(first: $first, after: $after, where: { parent: null }) {
+  pages(first: $first, after: $after) {
     nodes {
       ancestors(first: 100) {
         nodes {
@@ -40,8 +40,8 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       enclosure
       featuredImage {
         node {
+          __typename
           id
-          sourceUrl
         }
       }
       featuredImageDatabaseId
@@ -71,15 +71,8 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       slug
       status
       template {
-        templateFile
         templateName
         __typename
-      }
-      terms(first: 100) {
-        nodes {
-          id
-          __typename
-        }
       }
       title
       uri
