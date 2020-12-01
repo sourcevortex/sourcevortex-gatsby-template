@@ -1,6 +1,6 @@
-# SourceVortex template
+# SourceVortex Theme
 
-This repository contains a template built-in Gatsby.
+This repository contains a theme used on SourceVortex site built-in Gatsby.
 
 ---
 
