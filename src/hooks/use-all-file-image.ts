@@ -15,9 +15,7 @@ const useAllFileImage = (): AllFileData => {
         nodes {
           relativePath
           childImageSharp {
-            fluid(maxWidth: 1000) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }

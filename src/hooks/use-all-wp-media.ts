@@ -8,7 +8,7 @@ export interface AllWpMediaData {
         localFile: {
           publicURL: string
           childImageSharp: {
-            fluid: any
+            gatsbyImageData: any
           }
         }
       }
@@ -26,9 +26,7 @@ const useAllWpMedia = (): AllWpMediaData => {
             localFile {
               publicURL
               childImageSharp {
-                fluid(maxWidth: 1000) {
-                  ...GatsbyImageSharpFluid_noBase64
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
               }
             }
           }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { get } from 'lodash'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 import useAllWpMedia from '@Hook/use-all-wp-media'
 
@@ -16,15 +16,17 @@ export const PostImage: React.FC<PostImageProps> = ({ src, alt, width }) => {
     /^(http?s:\/\/.+?\/.+?)-(\d+x\d+)\.(.+?)$/g,
     '$1.$3'
   )
-  const image = allWpMediaItem.edges.find(
-    ({ node }) => {
-      return node.sourceUrl === originalSource
-    }
+  const image = allWpMediaItem.edges.find(({ node }) => {
+    return node.sourceUrl === originalSource
+  })
+  const gatsbyImageData = get(
+    image,
+    'node.localFile.childImageSharp.gatsbyImageData',
+    null
   )
-  const fluidImage = get(image, 'node.localFile.childImageSharp.fluid', null)
-  return fluidImage ? (
-    <Img
-      fluid={fluidImage}
+  return gatsbyImageData ? (
+    <GatsbyImage
+      image={gatsbyImageData}
       alt={alt}
       style={{
         width: width ? width + 'px' : '100%',

@@ -49,7 +49,6 @@ const Blog: React.FC = () => {
   return (
     <DefaultLayout>
       <SEO title="Blog" />
-      <S.Title>BLOG</S.Title>
       <S.CardContainer>
         {edges.map(({ node }) => (
           <RenderCard key={`card-${node.id}`} node={node} />

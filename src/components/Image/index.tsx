@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { get } from 'lodash'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 // Hooks
 import useAllFileImage, { AllFileData } from '@Hook/use-all-file-image'
@@ -21,7 +21,7 @@ const Image: React.FC<ImageProps> = ({ src, wordpress, style, ...props }) => {
         ({ relativePath }) => src === relativePath
       )
       if (foundedImg) {
-        return get(foundedImg, 'childImageSharp.fluid')
+        return get(foundedImg, 'childImageSharp.gatsbyImageData')
       }
     } else {
       foundedImg = dataWP.allWpMediaItem.edges.find(
@@ -29,7 +29,7 @@ const Image: React.FC<ImageProps> = ({ src, wordpress, style, ...props }) => {
       )
 
       if (foundedImg) {
-        return get(foundedImg, 'node.localFile.childImageSharp.fluid')
+        return get(foundedImg, 'node.localFile.childImageSharp.gatsbyImageData')
       }
     }
 
@@ -38,7 +38,7 @@ const Image: React.FC<ImageProps> = ({ src, wordpress, style, ...props }) => {
         data.allFile.nodes.find(
           ({ relativePath }) => relativePath === 'generic/default.png'
         ),
-        'childImageSharp.fluid'
+        'childImageSharp.gatsbyImageData'
       )
     }
   }
@@ -47,7 +47,9 @@ const Image: React.FC<ImageProps> = ({ src, wordpress, style, ...props }) => {
   const dataWP = useAllWpMedia()
   const fluid = useMemo(() => findImage(data, dataWP), [data, dataWP, src])
 
-  return fluid ? <Img fluid={fluid} Tag="div" {...props} style={style} /> : null
+  return fluid ? (
+    <GatsbyImage image={fluid} alt="" {...props} style={style} />
+  ) : null
 }
 
 Image.defaultProps = {
