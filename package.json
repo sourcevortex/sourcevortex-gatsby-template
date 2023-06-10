@@ -10,7 +10,7 @@
     "@material-ui/lab": "^4.0.0-alpha.56",
     "babel-plugin-styled-components": "^1.10.7",
     "dotenv": "^8.2.0",
-    "gatsby": "^3.0.4",
+    "gatsby": "^4.25.7",
     "gatsby-plugin-canonical-urls": "^3.0.0",
     "gatsby-plugin-google-analytics": "^3.0.0",
     "gatsby-plugin-image": "^1.0.1",
